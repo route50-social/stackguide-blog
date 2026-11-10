@@ -1,0 +1,8 @@
+# 검색 엔진 수집 규칙
+# 모든 검색 엔진이 사이트 전체를 수집할 수 있도록 허용하고, sitemap 위치를 알려 줍니다.
+# 공개 주소를 바꾸면 아래 Sitemap 주소도 함께 수정합니다.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://stackguide.route50.kr/sitemap-index.xml
