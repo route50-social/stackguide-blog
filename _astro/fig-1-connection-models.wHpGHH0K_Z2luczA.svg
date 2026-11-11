@@ -1,0 +1,103 @@
+<!-- 그림 1: 원격 데스크톱 도구의 세 가지 연결 방식(직접 연결, 업체 서버 중계, 직접 운영하는 중계 서버) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" role="img" aria-labelledby="fig1-title fig1-desc">
+  <title id="fig1-title">원격 데스크톱 도구의 세 가지 연결 방식</title>
+  <desc id="fig1-desc">첫째, Windows 원격 데스크톱(RDP)은 내 PC가 원격 PC에 직접 접속하며, 인터넷에서 쓸 때는 3389 포트를 열지 말고 VPN이나 RD 게이트웨이를 거칩니다. 둘째, TeamViewer·AnyDesk·Chrome 원격 데스크톱·Splashtop은 두 PC가 모두 업체 서버에 먼저 접속해 상대를 찾고, 도구에 따라 두 PC를 직접 잇거나 업체 서버가 화면 데이터를 중계합니다. 셋째, RustDesk는 같은 구조에서 중계 서버를 직접 운영할 수 있습니다.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M5 2 L12 7 L5 12" fill="none" stroke="#334155" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="960" rx="16" fill="#f8fafc" />
+  <rect x="1" y="1" width="1198" height="958" rx="16" fill="none" stroke="#cbd5e1" stroke-width="2" />
+
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+    <text x="64" y="96" font-size="38" font-weight="700" fill="#1e293b">원격 데스크톱 도구의 세 가지 연결 방식</text>
+    <text x="64" y="140" font-size="24" fill="#475569">누가 상대 PC를 찾아 주고, 화면 데이터가 어디를 지나는지가 다릅니다</text>
+
+    <!-- 행 배경: 같은 크기(1072×208), 간격 24 -->
+    <g stroke="#cbd5e1" stroke-width="2">
+      <rect x="64" y="176" width="1072" height="208" rx="16" fill="#ffffff" />
+      <rect x="64" y="408" width="1072" height="208" rx="16" fill="#ffffff" />
+      <rect x="64" y="640" width="1072" height="208" rx="16" fill="#ffffff" />
+    </g>
+
+    <!-- 번호 -->
+    <g fill="#ffffff" stroke="#64748b" stroke-width="2">
+      <circle cx="112" cy="224" r="24" />
+      <circle cx="112" cy="456" r="24" />
+      <circle cx="112" cy="688" r="24" />
+    </g>
+    <g font-size="26" font-weight="700" fill="#334155" text-anchor="middle">
+      <text x="112" y="233">1</text>
+      <text x="112" y="465">2</text>
+      <text x="112" y="697">3</text>
+    </g>
+
+    <!-- 행 제목과 해당 도구 -->
+    <g font-size="28" font-weight="700" fill="#1e293b">
+      <text x="152" y="234">직접 연결</text>
+      <text x="152" y="466">업체 서버가 연결을 주선·중계</text>
+      <text x="152" y="698">중계 서버를 직접 운영</text>
+    </g>
+    <g font-size="22" fill="#475569">
+      <text x="152" y="268">Windows 원격 데스크톱(RDP)</text>
+      <text x="152" y="500">TeamViewer · AnyDesk · Chrome 원격 데스크톱 · Splashtop</text>
+      <text x="152" y="732">RustDesk 자체 서버(무료 오픈 소스 또는 Server Pro)</text>
+    </g>
+
+    <!-- PC 상자: 모든 행 같은 크기(208×64) -->
+    <g stroke="#94a3b8" stroke-width="2">
+      <rect x="112" y="296" width="208" height="64" rx="12" fill="#e0e7ff" />
+      <rect x="880" y="296" width="208" height="64" rx="12" fill="#dcfce7" />
+      <rect x="112" y="528" width="208" height="64" rx="12" fill="#e0e7ff" />
+      <rect x="880" y="528" width="208" height="64" rx="12" fill="#dcfce7" />
+      <rect x="112" y="760" width="208" height="64" rx="12" fill="#e0e7ff" />
+      <rect x="880" y="760" width="208" height="64" rx="12" fill="#dcfce7" />
+    </g>
+    <g font-size="24" font-weight="700" fill="#1e293b" text-anchor="middle">
+      <text x="216" y="337">내 PC</text>
+      <text x="984" y="337">원격 PC</text>
+      <text x="216" y="569">내 PC</text>
+      <text x="984" y="569">원격 PC</text>
+      <text x="216" y="801">내 PC</text>
+      <text x="984" y="801">원격 PC</text>
+    </g>
+
+    <!-- 1행: VPN·RD 게이트웨이를 거친 직접 연결 -->
+    <path d="M320 328 H876" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+    <rect x="456" y="304" width="288" height="48" rx="24" fill="#ffffff" stroke="#334155" stroke-width="2" />
+    <text x="600" y="336" font-size="22" font-weight="600" fill="#334155" text-anchor="middle">VPN · RD 게이트웨이</text>
+    <text x="1088" y="268" font-size="22" font-weight="600" fill="#b91c1c" text-anchor="end">✕ 3389 포트를 인터넷에 직접 열지 않기</text>
+
+    <!-- 2행: 업체 서버 -->
+    <rect x="456" y="528" width="288" height="64" rx="12" fill="#fef3c7" stroke="#b45309" stroke-width="2" />
+    <text x="600" y="569" font-size="24" font-weight="700" fill="#1e293b" text-anchor="middle">업체 서버</text>
+    <g stroke="#334155" stroke-width="3" fill="none">
+      <path d="M320 560 H452" marker-end="url(#arrow)" />
+      <path d="M876 560 H748" marker-end="url(#arrow)" />
+    </g>
+
+    <!-- 3행: 직접 운영하는 서버 -->
+    <rect x="456" y="760" width="288" height="64" rx="12" fill="#e2e8f0" stroke="#475569" stroke-width="2" />
+    <text x="600" y="801" font-size="24" font-weight="700" fill="#1e293b" text-anchor="middle">내가 운영하는 서버</text>
+    <g stroke="#334155" stroke-width="3" fill="none">
+      <path d="M320 792 H452" marker-end="url(#arrow)" />
+      <path d="M876 792 H748" marker-end="url(#arrow)" />
+    </g>
+
+    <!-- 직접 연결 시도(점선) -->
+    <g stroke="#16a34a" stroke-width="3" fill="none" stroke-dasharray="10 8">
+      <path d="M216 592 V604 H984 V592" />
+      <path d="M216 824 V836 H984 V824" />
+    </g>
+
+    <!-- 범례 -->
+    <g font-size="22" fill="#334155">
+      <path d="M64 904 H112" stroke="#334155" stroke-width="3" marker-end="url(#arrow)" />
+      <text x="128" y="912">접속을 시작하는 방향(두 PC 모두 서버로 먼저 접속)</text>
+      <path d="M672 904 H720" stroke="#16a34a" stroke-width="3" stroke-dasharray="10 8" />
+      <text x="736" y="912" fill="#15803d">직접 연결을 먼저 시도(도구마다 다름)</text>
+    </g>
+  </g>
+</svg>
