@@ -1,0 +1,57 @@
+<!-- 본문 그림 2: CoderPad State of Tech Hiring 2026에서 AI 허용 시 실력을 보여 주는 신호로 꼽힌 항목의 응답 비율 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="fig2-title fig2-desc">
+  <title id="fig2-title">AI를 허용한 평가에서 실력을 보여 주는 신호</title>
+  <desc id="fig2-desc">CoderPad State of Tech Hiring 2026 설문에서 AI를 허용할 때 실제 실력을 보여 주는 신호로 꼽힌 항목의 응답 비율입니다. AI의 실수를 찾아 고친다 66%, 트레이드오프와 정확성을 설명한다 56%, 반복해서 AI 결과를 개선한다 28%, 엣지 케이스와 실패 상황을 다룬다 28%, 보안과 개인정보를 고려한다 25%입니다. 여러 항목을 고를 수 있어 합계는 100%를 넘습니다.</desc>
+
+  <rect width="1200" height="600" rx="16" fill="#f8fafc" />
+  <rect x="1" y="1" width="1198" height="598" rx="16" fill="none" stroke="#cbd5e1" stroke-width="2" />
+
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+    <text x="64" y="96" font-size="38" font-weight="700" fill="#1e293b">AI를 허용한 평가에서 실력을 보여 주는 신호</text>
+    <text x="64" y="140" font-size="24" fill="#475569">응답 비율(%). 여러 항목을 고를 수 있어 합계가 100%를 넘습니다</text>
+
+    <!-- 눈금: 막대 시작 x=480, 100% = 600px -->
+    <g stroke="#e2e8f0" stroke-width="2">
+      <path d="M480 176 V496" />
+      <path d="M630 176 V496" />
+      <path d="M780 176 V496" />
+      <path d="M930 176 V496" />
+      <path d="M1080 176 V496" />
+    </g>
+    <path d="M480 176 V496" stroke="#94a3b8" stroke-width="2" />
+    <g font-size="22" fill="#475569" text-anchor="middle">
+      <text x="480" y="528">0</text>
+      <text x="630" y="528">25</text>
+      <text x="780" y="528">50</text>
+      <text x="930" y="528">75</text>
+      <text x="1080" y="528">100</text>
+    </g>
+
+    <!-- 항목 이름 -->
+    <g font-size="22" fill="#1e293b" text-anchor="end">
+      <text x="456" y="216">AI의 실수를 찾아 고친다</text>
+      <text x="456" y="280">트레이드오프와 정확성을 설명한다</text>
+      <text x="456" y="344">반복해서 AI 결과를 개선한다</text>
+      <text x="456" y="408">엣지 케이스·실패 상황을 다룬다</text>
+      <text x="456" y="472">보안·개인정보를 고려한다</text>
+    </g>
+
+    <!-- 막대: 길이 = 값 × 6 -->
+    <g fill="#0f766e">
+      <rect x="480" y="188" width="396" height="40" rx="6" />
+      <rect x="480" y="252" width="336" height="40" rx="6" />
+      <rect x="480" y="316" width="168" height="40" rx="6" />
+      <rect x="480" y="380" width="168" height="40" rx="6" />
+      <rect x="480" y="444" width="150" height="40" rx="6" />
+    </g>
+    <g font-size="24" font-weight="700" fill="#134e4a">
+      <text x="892" y="216">66</text>
+      <text x="832" y="280">56</text>
+      <text x="664" y="344">28</text>
+      <text x="664" y="408">28</text>
+      <text x="646" y="472">25</text>
+    </g>
+
+    <text x="64" y="568" font-size="22" fill="#475569">자료: CoderPad State of Tech Hiring 2026 (약 650명 설문, 2026-11-11 확인)</text>
+  </g>
+</svg>

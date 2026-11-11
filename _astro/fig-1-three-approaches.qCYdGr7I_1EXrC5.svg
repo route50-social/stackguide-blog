@@ -1,0 +1,61 @@
+<!-- 본문 그림 1: 채용 평가에서 AI를 다루는 세 가지 방식과 공개된 사례 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="fig1-title fig1-desc">
+  <title id="fig1-title">채용 평가에서 AI를 다루는 세 가지 방식</title>
+  <desc id="fig1-desc">첫째, AI 없이 본다: Anthropic은 따로 허락하지 않으면 라이브 면접과 과제에서 AI를 쓰지 못하게 하고, 구글은 최소 한 번의 대면 면접을 다시 두었으며, Karat 조사에서는 62%가 기술 면접의 AI 사용을 금지했습니다. 둘째, 라운드마다 나눈다: 메타는 기존 코딩 면접에 AI 지원 라운드를 더해 시범 운영하고, 구글은 코드 이해 라운드에서만 Gemini를 허용하는 시범을 2026년 하반기에 시작하며, CoderPad 조사에서는 조건부 허용 29%, 사안별 판단 20%였습니다. 셋째, AI와 함께 본다: 캔바는 기술 면접에서 AI 사용을 기대하고, 넥슨은 코딩 테스트 대신 AI 도구 과제를 도입했으며, CoderPad 조사에서 폭넓게 허용한다는 답은 17%였습니다.</desc>
+
+  <rect width="1200" height="760" rx="16" fill="#f8fafc" />
+  <rect x="1" y="1" width="1198" height="758" rx="16" fill="none" stroke="#cbd5e1" stroke-width="2" />
+
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+    <text x="64" y="96" font-size="38" font-weight="700" fill="#1e293b">채용 평가에서 AI를 다루는 세 가지 방식</text>
+    <text x="64" y="140" font-size="24" fill="#475569">같은 시기에도 회사마다 답이 다릅니다. 한 회사 안에서도 라운드마다 다를 수 있습니다</text>
+
+    <!-- 행 배경: 같은 크기(1072×168), 같은 간격(24) -->
+    <g stroke="#cbd5e1" stroke-width="2">
+      <rect x="64" y="184" width="1072" height="168" rx="16" fill="#ffffff" />
+      <rect x="64" y="376" width="1072" height="168" rx="16" fill="#ffffff" />
+      <rect x="64" y="568" width="1072" height="168" rx="16" fill="#ffffff" />
+    </g>
+    <!-- 왼쪽 방식 이름 칸 -->
+    <g stroke="none">
+      <rect x="64" y="184" width="312" height="168" rx="16" fill="#e2e8f0" />
+      <rect x="64" y="376" width="312" height="168" rx="16" fill="#e0e7ff" />
+      <rect x="64" y="568" width="312" height="168" rx="16" fill="#ccfbf1" />
+    </g>
+    <g fill="#ffffff" stroke="#64748b" stroke-width="2">
+      <circle cx="112" cy="240" r="24" />
+      <circle cx="112" cy="432" r="24" />
+      <circle cx="112" cy="624" r="24" />
+    </g>
+    <g font-size="26" font-weight="700" fill="#334155" text-anchor="middle">
+      <text x="112" y="249">1</text>
+      <text x="112" y="441">2</text>
+      <text x="112" y="633">3</text>
+    </g>
+    <g font-size="28" font-weight="700" fill="#1e293b">
+      <text x="152" y="250">AI 없이 본다</text>
+      <text x="152" y="442">라운드마다 나눈다</text>
+      <text x="152" y="634">AI와 함께 본다</text>
+    </g>
+    <g font-size="22" fill="#475569">
+      <text x="96" y="304">보려는 것: 혼자 푸는 기본기</text>
+      <text x="96" y="496">보려는 것: 기본기와 AI 활용</text>
+      <text x="96" y="688">보려는 것: AI를 다루는 판단</text>
+    </g>
+
+    <!-- 오른쪽 사례 -->
+    <g font-size="22" fill="#334155">
+      <text x="408" y="236"><tspan font-weight="700">Anthropic</tspan> 라이브 면접·과제는 허락 없이는 AI 금지</text>
+      <text x="408" y="278"><tspan font-weight="700">구글</tspan> 최소 한 번은 대면 면접 (2025년 CEO 발언 보도)</text>
+      <text x="408" y="320"><tspan font-weight="700">Karat 조사</tspan> 기술 면접에서 AI 금지 62%</text>
+
+      <text x="408" y="428"><tspan font-weight="700">메타</tspan> 기존 코딩 면접에 AI 지원 라운드를 더해 시범</text>
+      <text x="408" y="470"><tspan font-weight="700">구글</tspan> 코드 이해 라운드만 Gemini 허용 (2026 하반기 시범)</text>
+      <text x="408" y="512"><tspan font-weight="700">CoderPad 조사</tspan> 조건부 허용 29%, 사안별 판단 20%</text>
+
+      <text x="408" y="620"><tspan font-weight="700">캔바</tspan> 기술 면접에서 AI 사용을 기대 (2025-06)</text>
+      <text x="408" y="662"><tspan font-weight="700">넥슨</tspan> 코딩 테스트 대신 AI 도구 과제 (2026-09)</text>
+      <text x="408" y="704"><tspan font-weight="700">CoderPad 조사</tspan> 폭넓게 허용 17%</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>(function(){const themeStorageKey = "stackguide-theme";
+
+  document.documentElement.dataset.js = '';
+  try {
+    document.documentElement.dataset.theme = localStorage.getItem(themeStorageKey) === 'light' ? 'light' : 'dark';
+  } catch {
+    document.documentElement.dataset.theme = 'dark';
+  }
+})();</script><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="StackGuide" href="https://stackguide.route50.kr/rss.xml"><meta name="generator" content="Astro v7.4.7"><link rel="canonical" href="https://stackguide.route50.kr/posts/ai-developer-assessment-261111/"><title>AI는 개발자 평가를 어떻게 바꾸고 있나: 코딩 테스트, 기술 면접, 인사 평가의 변화 | StackGuide</title><meta name="description" content="캔바·메타·구글·넥슨처럼 AI를 쓰게 하고 그 쓰는 방식을 보는 회사와, Anthropic처럼 AI 없이 보는 회사의 실제 사례를 2026년 11월 기준으로 정리하고, 채용 조사와 생산성 연구가 보여 주는 평가 기준의 변화와 앞으로의 방향(필자 의견)을 살펴봅니다."><meta name="naver-site-verification" content="5d7ed879f063b4bcc0eebf083df5701d215c6a32"><meta property="og:type" content="article"><meta property="og:site_name" content="StackGuide"><meta property="og:locale" content="ko_KR"><meta property="og:url" content="https://stackguide.route50.kr/posts/ai-developer-assessment-261111/"><meta property="og:title" content="AI는 개발자 평가를 어떻게 바꾸고 있나: 코딩 테스트, 기술 면접, 인사 평가의 변화 | StackGuide"><meta property="og:description" content="캔바·메타·구글·넥슨처럼 AI를 쓰게 하고 그 쓰는 방식을 보는 회사와, Anthropic처럼 AI 없이 보는 회사의 실제 사례를 2026년 11월 기준으로 정리하고, 채용 조사와 생산성 연구가 보여 주는 평가 기준의 변화와 앞으로의 방향(필자 의견)을 살펴봅니다."><meta property="og:image" content="https://stackguide.route50.kr/_astro/cover.fLXnru_m_Z1VjYH7.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="밝은 낮의 책상 위 왼쪽에 연필을 올린 답안지와 초시계가 있고, 가운데 노트북 화면에는 코드와 AI 대화 말풍선이 떠 있으며, 돋보기가 코드 한 줄의 문제를 붉은 밑줄로 짚고 있는 그림. 시간 안에 혼자 푸는 시험에서 AI가 만든 코드를 검증하는 평가로 옮겨 가는 흐름을 담았습니다."><meta name="twitter:card" content="summary_large_image"><script async src="https://www.googletagmanager.com/gtag/js?id=G-WLK26GJMMZ"></script><script>(function(){const measurementId = "G-WLK26GJMMZ";
+
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag('js', new Date());
+      window.gtag('config', measurementId);
+    })();</script><link rel="stylesheet" href="/_astro/BaseLayout.tiN82tYJ.css"></head><body><a class="skip-link" href="#main">본문 바로가기</a><div class="layout" data-layout><aside class="drawer-side" id="site-sidebar" data-drawer><nav class="sidebar" aria-label="주요 메뉴"><button class="icon-button sidebar-close" type="button" data-drawer-close><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span class="sr-only">메뉴 닫기</span></button><a class="sidebar-brand" href="/"><span class="sidebar-avatar" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg></span><span class="sidebar-title">StackGuide</span><span class="sidebar-description">개발 및 인프라 기술 스택 가이드</span></a><ul class="menu"><li><a href="/">Home</a></li><li><details><summary>Development<span class="post-count">1<span class="sr-only">편</span></span><svg class="menu-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary><ul><li><a href="/development/architecture/">Architecture<span class="post-count">1<span class="sr-only">편</span></span></a></li></ul></details></li><li><details><summary>Cloud &amp; Infrastructure<span class="post-count">1<span class="sr-only">편</span></span><svg class="menu-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary><ul><li><a href="/cloud/network/">Network<span class="post-count">1<span class="sr-only">편</span></span></a></li></ul></details></li><li><details open><summary>Tech Blog<span class="post-count">1<span class="sr-only">편</span></span><svg class="menu-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary><ul><li><a href="/tech-blog/case-study/" aria-current="page">Case Study<span class="post-count">1<span class="sr-only">편</span></span></a></li></ul></details></li><li><details><summary>IT Business<span class="post-count">1<span class="sr-only">편</span></span><svg class="menu-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary><ul><li><a href="/business/side-project/">Side Project<span class="post-count">1<span class="sr-only">편</span></span></a></li></ul></details></li><li class="menu-divider" role="presentation"></li><li><a href="/tags/">태그</a></li><li><a href="/about/">소개</a></li></ul><div class="sidebar-footer"><a class="icon-button" href="/rss.xml" title="RSS 피드"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><path d="M6 19a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg><span class="sr-only">RSS 피드</span></a><button class="icon-button theme-toggle" type="button" data-theme-toggle hidden><span class="theme-toggle-icon theme-toggle-sun"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"></path><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span><span class="theme-toggle-icon theme-toggle-moon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg></span><span class="sr-only" data-theme-toggle-label>화면 테마 전환</span></button><script type="module">var e=document.querySelector(`[data-theme-toggle]`),t=e?.querySelector(`[data-theme-toggle-label]`);function n(){return document.documentElement.dataset.theme===`light`?`light`:`dark`}function r(){if(!e||!t)return;let r=n()===`dark`;e.dataset.effectiveTheme=r?`dark`:`light`,t.textContent=r?`밝은 화면으로 전환`:`어두운 화면으로 전환`,e.title=t.textContent}e&&t&&(r(),e.hidden=!1,e.addEventListener(`click`,()=>{let e=n()===`dark`?`light`:`dark`;document.documentElement.dataset.theme=e;try{localStorage.setItem(`stackguide-theme`,e)}catch{}r()}));</script></div></nav></aside><button class="drawer-overlay" type="button" tabindex="-1" aria-hidden="true" data-drawer-close></button><div class="drawer-content"><header class="mobile-header"><button class="icon-button menu-button" type="button" aria-expanded="false" aria-controls="site-sidebar" data-drawer-open><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg><span class="sr-only">메뉴 열기</span></button><a class="mobile-title" href="/"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>StackGuide</a></header><main id="main" class="site-main wide" tabindex="-1"><div class="article-layout has-toc"><aside class="article-toc"><nav aria-label="글 목차"><h2>이 글의 순서</h2><ol><li><a href="#왜-기존-평가-방식이-흔들리나">왜 기존 평가 방식이 흔들리나</a></li><li><a href="#회사들이-고른-세-갈래">회사들이 고른 세 갈래</a></li><li class="toc-nested"><a href="#ai-없이-본다-anthropic-그리고-대면-면접의-귀환">AI 없이 본다: Anthropic, 그리고 대면 면접의 귀환</a></li><li class="toc-nested"><a href="#라운드마다-나눈다-메타와-구글">라운드마다 나눈다: 메타와 구글</a></li><li class="toc-nested"><a href="#ai와-함께-본다-캔바와-넥슨">AI와 함께 본다: 캔바와 넥슨</a></li><li><a href="#평가-항목은-무엇이-달라졌나">평가 항목은 무엇이 달라졌나</a></li><li><a href="#입사-뒤-평가도-바뀌고-있다">입사 뒤 평가도 바뀌고 있다</a></li><li class="toc-nested"><a href="#ai를-얼마나-쓰나는-좋은-지표일까">“AI를 얼마나 쓰나”는 좋은 지표일까</a></li><li><a href="#지원자와-현업-개발자가-지금-챙길-것">지원자와 현업 개발자가 지금 챙길 것</a></li><li><a href="#앞으로는-어떻게-흘러갈까-필자-의견">앞으로는 어떻게 흘러갈까 (필자 의견)</a></li><li><a href="#기준과-한계">기준과 한계</a></li></ol></nav></aside><article class="post"><nav class="breadcrumbs" aria-label="현재 위치"><a href="/">Home</a><span aria-hidden="true">/</span><span>Tech Blog</span><span aria-hidden="true">/</span><a href="/tech-blog/case-study/">Case Study</a></nav><figure class="article-cover"><img src="/_astro/cover.fLXnru_m_Z27W2V1.svg" srcset="/_astro/cover.fLXnru_m_Z21xmJ2.svg 480w, /_astro/cover.fLXnru_m_Z9ugIK.svg 800w, /_astro/cover.fLXnru_m_Z27W2V1.svg 1200w" alt="밝은 낮의 책상 위 왼쪽에 연필을 올린 답안지와 초시계가 있고, 가운데 노트북 화면에는 코드와 AI 대화 말풍선이 떠 있으며, 돋보기가 코드 한 줄의 문제를 붉은 밑줄로 짚고 있는 그림. 시간 안에 혼자 푸는 시험에서 AI가 만든 코드를 검증하는 평가로 옮겨 가는 흐름을 담았습니다." sizes="(max-width: 48rem) 100vw, 800px" loading="lazy" decoding="async" width="1200" height="675"></figure><header class="post-header"><span class="badge badge-secondary">Case Study</span><h1>AI는 개발자 평가를 어떻게 바꾸고 있나: 코딩 테스트, 기술 면접, 인사 평가의 변화</h1><p class="post-description">캔바·메타·구글·넥슨처럼 AI를 쓰게 하고 그 쓰는 방식을 보는 회사와, Anthropic처럼 AI 없이 보는 회사의 실제 사례를 2026년 11월 기준으로 정리하고, 채용 조사와 생산성 연구가 보여 주는 평가 기준의 변화와 앞으로의 방향(필자 의견)을 살펴봅니다.</p><dl class="post-meta"><div><dt>작성일</dt><dd><time datetime="2026-11-11">2026년 11월 11일</time></dd></div><div><dt>정보 기준일</dt><dd><time datetime="2026-11-11">2026년 11월 11일</time></dd></div></dl><ul class="post-tags" aria-label="태그"><li><a class="badge badge-outline" href="/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%B1%84%EC%9A%A9/">#개발자채용</a></li><li><a class="badge badge-outline" href="/tags/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/">#코딩테스트</a></li><li><a class="badge badge-outline" href="/tags/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91/">#기술면접</a></li><li><a class="badge badge-outline" href="/tags/%EC%97%AD%EB%9F%89%ED%8F%89%EA%B0%80/">#역량평가</a></li><li><a class="badge badge-outline" href="/tags/%EC%9D%B8%EC%82%AC%ED%8F%89%EA%B0%80/">#인사평가</a></li><li><a class="badge badge-outline" href="/tags/AI%EC%BD%94%EB%94%A9%EB%8F%84%EA%B5%AC/">#AI코딩도구</a></li><li><a class="badge badge-outline" href="/tags/LLM/">#LLM</a></li><li><a class="badge badge-outline" href="/tags/%EC%BD%94%EB%94%A9%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8/">#코딩에이전트</a></li><li><a class="badge badge-outline" href="/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9/">#라이브코딩</a></li><li><a class="badge badge-outline" href="/tags/%EA%B3%BC%EC%A0%9C%ED%98%95%ED%8F%89%EA%B0%80/">#과제형평가</a></li><li><a class="badge badge-outline" href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">#자료구조알고리즘</a></li><li><a class="badge badge-outline" href="/tags/%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A7%81/">#프롬프트엔지니어링</a></li><li><a class="badge badge-outline" href="/tags/%EB%B0%94%EC%9D%B4%EB%B8%8C%EC%BD%94%EB%94%A9/">#바이브코딩</a></li><li><a class="badge badge-outline" href="/tags/%EC%97%A3%EC%A7%80%EC%BC%80%EC%9D%B4%EC%8A%A4/">#엣지케이스</a></li><li><a class="badge badge-outline" href="/tags/%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%93%9C%EC%98%A4%ED%94%84/">#트레이드오프</a></li><li><a class="badge badge-outline" href="/tags/%EC%BD%94%EB%93%9C%EB%A6%AC%EB%B7%B0/">#코드리뷰</a></li><li><a class="badge badge-outline" href="/tags/%EA%B0%9C%EB%B0%9C%EC%83%9D%EC%82%B0%EC%84%B1/">#개발생산성</a></li><li><a class="badge badge-outline" href="/tags/RCT/">#RCT</a></li><li><a class="badge badge-outline" href="/tags/DORA/">#DORA</a></li><li><a class="badge badge-outline" href="/tags/Gemini/">#Gemini</a></li></ul><hr class="divider"></header><div class="prose"><p>코딩 테스트를 준비하는 사람이라면 한 번쯤 이런 고민을 해 봤을 겁니다. 회사에 들어가면 매일 AI 코딩 도구를 쓸 텐데, 시험장에서는 왜 맨손으로 알고리즘을 풀어야 할까. 반대로 면접관 쪽에서는 화면 너머의 지원자가 정말 혼자 풀고 있는지 확신하기 어려워졌습니다.</p>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>AI 코딩 도구:</strong> 코드를 자동 완성하거나, 자연어 요청을 받아 코드를 작성·수정해 주는 도구입니다. GitHub Copilot, Cursor, Claude Code 같은 제품이 여기에 속합니다.</li>
+<li><strong>코딩 테스트:</strong> 정해진 시간 안에 프로그래밍 문제를 풀게 해 기본 실력을 확인하는 채용 단계입니다. 국내에서는 서류 다음의 1차 관문으로 쓰는 경우가 많습니다.</li>
+</ul>
+</blockquote>
+<p>2026년 11월 지금, 이 질문에 대한 회사들의 답은 하나로 모이지 않았습니다. 캔바는 면접에서 AI를 쓰라고 요구하고, Anthropic은 따로 허락하지 않으면 쓰지 말라고 합니다. 구글은 대면 면접을 되살리는 한편으로 AI를 허용하는 면접 라운드를 시범 운영하고, 넥슨은 신입 인턴 채용에서 코딩 테스트를 아예 없앴습니다. 이 글은 이런 공개 사례와 채용·개발 관련 조사를 바탕으로 개발자를 평가하는 기준이 어떻게 움직이고 있는지 정리합니다. 채용 단계와 입사 뒤 인사 평가를 나눠 보고, 마지막 절에는 앞으로의 방향에 대한 필자의 의견을 사실과 구분해 적었습니다. 사례와 수치는 모두 2026년 11월 11일에 원문을 확인한 내용입니다.</p>
+<h2 id="왜-기존-평가-방식이-흔들리나">왜 기존 평가 방식이 흔들리나</h2>
+<p>가장 큰 이유는 개발 현장에서 AI가 이미 일상 도구가 되었다는 점입니다. 구글 클라우드의 DORA 연구팀이 2025년 9월에 낸 보고서에 따르면 약 5,000명의 응답자 가운데 90%가 업무에 AI를 쓴다고 답했습니다. 캔바는 2025년 6월 기준으로 프런트엔드·백엔드 엔지니어의 절반 가까이가 AI 코딩 도구를 매일 쓴다고 밝혔습니다. 실제 업무에서는 AI와 함께 일하는데 평가에서만 AI를 빼면, 평가가 업무 능력을 제대로 비추지 못한다는 문제 제기가 나올 수밖에 없습니다.</p>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>DORA(DevOps Research and Assessment):</strong> 소프트웨어 개발·배포 조직의 성과를 해마다 조사해 보고서로 내는 구글 클라우드 산하 연구 프로그램입니다. 2025년 보고서는 AI 지원 개발을 주제로 삼았습니다.</li>
+</ul>
+</blockquote>
+<p>다른 이유는 부정행위입니다. 화상 면접에서 화면 밖의 LLM 챗봇에게 문제를 넣고 답을 받아 읽는 일이 가능해졌고, 이제는 코딩 에이전트가 과제를 통째로 풀어 낼 수도 있습니다. 기술 면접 대행사 Karat가 2026년 1월 공개한 미국·인도·중국 엔지니어링 리더 400명 조사에서 71%는 “AI 때문에 기술 역량을 평가하기 더 어려워졌다”고 답했고, 리더들은 금지 안내를 받고도 AI를 쓰는 지원자가 절반이 넘는다고 추정했습니다. 온라인 코딩 면접 도구를 만드는 CoderPad의 2026년 설문(약 650명)에서는 가장 큰 부정행위 걱정으로 “에이전트가 만든 답안”이 52%, “신원 위장”이 20%를 차지했습니다. 이전 해 설문에는 AI가 만든 답안이라는 항목 자체가 없었다고 합니다.</p>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>LLM(Large Language Model, 대규모 언어 모델):</strong> 방대한 글과 코드를 학습해 문장이나 코드를 만들어 내는 AI 모델입니다. ChatGPT, Claude, Gemini가 모두 LLM을 바탕으로 합니다.</li>
+<li><strong>코딩 에이전트:</strong> 질문에 답만 하는 데서 그치지 않고, 스스로 파일을 읽고 코드를 고치고 명령을 실행하며 작업을 끝까지 진행하는 AI 도구입니다.</li>
+</ul>
+</blockquote>
+<p>Karat와 CoderPad는 모두 채용 평가 서비스를 파는 회사이고, 두 조사의 표본과 질문 방식도 다릅니다. 숫자 자체보다는 “평가하기 어려워졌다”는 공통된 방향을 보는 편이 안전합니다.</p>
+<h2 id="회사들이-고른-세-갈래">회사들이 고른 세 갈래</h2>
+<p>공개된 사례를 모아 보면 회사들의 대응은 크게 세 가지로 나뉩니다. AI를 빼고 기본기를 보는 쪽, 라운드마다 규칙을 나누는 쪽, AI를 쓰게 하고 그 쓰는 방식을 보는 쪽입니다.</p>
+<p><img alt="채용 평가에서 AI를 다루는 세 가지 방식을 세 줄로 나눈 표. 1번 AI 없이 본다: Anthropic은 라이브 면접과 과제에서 허락 없이 AI 금지, 구글은 최소 한 번 대면 면접, Karat 조사에서 AI 금지 62%. 2번 라운드마다 나눈다: 메타는 기존 코딩 면접에 AI 지원 라운드를 더해 시범, 구글은 코드 이해 라운드만 Gemini 허용(2026년 하반기 시범), CoderPad 조사에서 조건부 허용 29%와 사안별 판단 20%. 3번 AI와 함께 본다: 캔바는 기술 면접에서 AI 사용을 기대, 넥슨은 코딩 테스트 대신 AI 도구 과제, CoderPad 조사에서 폭넓게 허용 17%." loading="lazy" decoding="async" width="1200" height="760" src="/_astro/fig-1-three-approaches.qCYdGr7I_1EXrC5.svg"></p>
+<p><em>그림 1. 채용 평가에서 AI를 다루는 세 가지 방식과 공개 사례 (자료: 각 회사 공식 안내·언론 보도, Karat·CoderPad 2026 조사, 2026-11-11 확인)</em></p>
+<h3 id="ai-없이-본다-anthropic-그리고-대면-면접의-귀환">AI 없이 본다: Anthropic, 그리고 대면 면접의 귀환</h3>
+<p>Claude를 만드는 Anthropic은 지원자용 AI 사용 안내(2025년 7월 10일 갱신)에서 단계마다 규칙을 따로 정해 두었습니다. 이력서와 지원서 답변은 “초안은 직접 쓰고 Claude로 다듬으라”고 하고, 과제형 평가와 라이브 면접은 따로 안내하지 않는 한 AI 없이 치르라고 합니다. 면접 준비에 AI를 쓰는 것은 권장합니다. AI 회사이면서도 평가 단계에서는 지원자 본인의 실력을 따로 보겠다는 것입니다. 회사 쪽에서는 직무 설명 작성, 면접 질문 개발, 면접 녹취록 작성 등에 Claude를 쓰지만, 지원자 데이터로 모델을 학습시키거나 Claude가 채용을 결정하게 하지는 않는다고 밝혔습니다.</p>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>라이브 코딩 면접:</strong> 면접관이 지켜보는 가운데 실시간으로 코드를 작성하며 문제를 푸는 면접입니다. 화상 면접에서는 화면을 공유하며 진행합니다.</li>
+<li><strong>과제형 평가(take-home):</strong> 지원자가 며칠 동안 집에서 작은 프로그램이나 기능을 만들어 제출하는 평가 방식입니다.</li>
+</ul>
+</blockquote>
+<p>구글은 다른 방향에서 같은 문제에 대응했습니다. 순다르 피차이 CEO는 2025년 6월 Lex Fridman 팟캐스트에서 적어도 한 번은 대면 면접을 다시 두겠다고 말했다고 Entrepreneur 등이 전했습니다. 같은 기사에 따르면 맥킨지도 입사 제안 전에 최소 한 번은 지원자를 직접 만나도록 하고 있습니다. 화면 너머의 부정행위를 막는 가장 확실한 방법이 같은 방에 앉는 것이라는 판단입니다.</p>
+<p>조사 숫자로 보면 이쪽이 아직 다수입니다. Karat 조사에서는 62%가 기술 면접에서 AI 사용을 금지한다고 답했습니다. CoderPad 조사에서는 “허용하지 않는다”가 34%로 가장 많았습니다. 다만 나라별 차이가 커서, Karat 조사에서 라이브 면접에 AI를 허용하는 비율은 미국 회사 38%, 중국 회사 68%였습니다.</p>
+<h3 id="라운드마다-나눈다-메타와-구글">라운드마다 나눈다: 메타와 구글</h3>
+<p>메타는 2025년 7월 일부 코딩 직군 지원자에게 면접에서 AI 비서를 쓰게 하겠다고 직원들에게 알렸습니다. 이 사실을 처음 보도한 404 Media에 따르면 메타는 사내 공지에서 이 방식이 “앞으로 직원들이 일할 개발 환경을 더 잘 반영한다”고 설명했고, 직원들에게 모의 면접 참가자를 모집했습니다. 이후 보도(아시아경제, 2026년 5월)에 따르면 메타는 2025년 10월부터 두 번의 코딩 면접 가운데 하나를 AI 비서가 들어간 코딩 환경에서 치르는 60분짜리 면접으로 바꿔 시범 운영하고 있습니다. 메타가 이 형식을 모든 지원자에게 넓혔다는 공식 발표는 찾지 못했습니다.</p>
+<p>구글은 2025년에 대면 면접을 되살린 데 이어, 2026년 5월에는 AI를 허용하는 면접을 시범 운영한다는 보도가 나왔습니다. Business Insider가 입수한 내부 문서를 인용한 보도에 따르면 내용은 이렇습니다.</p>
+<ul>
+<li><strong>라운드:</strong> 기존 코드를 읽고, 디버깅하고, 성능을 개선하는 “코드 이해(code comprehension)” 라운드에서만 AI를 허용합니다.</li>
+<li><strong>도구:</strong> 회사가 승인한 AI 비서로, 구글 대변인이 Gemini라고 확인했습니다.</li>
+<li><strong>대상과 시기:</strong> 2026년 하반기부터 미국 일부 팀의 주니어·중간 경력 소프트웨어 엔지니어 채용에서 시범 운영하고, 결과에 따라 넓힐 계획입니다.</li>
+<li><strong>평가 항목:</strong> 프롬프트 작성(프롬프트 엔지니어링), AI 출력 검증, 디버깅 능력을 봅니다. 내부 문서는 이 방식을 “사람이 주도하고 AI가 돕는(human-led, AI-assisted)” 면접이라고 부릅니다.</li>
+</ul>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>프롬프트 엔지니어링:</strong> 원하는 결과를 얻도록 AI에게 주는 지시문(프롬프트)을 설계하는 일입니다. 맥락, 제약 조건, 원하는 출력 형식을 분명히 적는 것이 핵심입니다.</li>
+</ul>
+</blockquote>
+<p>두 회사 모두 AI를 전면 허용하지 않고 라운드를 나눴다는 점이 눈에 띕니다. 기본기를 보는 라운드는 남겨 두고, AI를 다루는 능력은 별도 라운드에서 확인하는 구조입니다. 구글이 AI를 허용한 라운드가 “새 코드 작성”이 아니라 “남이 쓴 코드 이해”라는 점도 의미가 있습니다. 이 부분은 뒤에서 다시 다룹니다.</p>
+<h3 id="ai와-함께-본다-캔바와-넥슨">AI와 함께 본다: 캔바와 넥슨</h3>
+<p>캔바는 가장 먼저 분명하게 방향을 바꾼 회사입니다. 2025년 6월 11일 캔바 엔지니어링 블로그 글 제목부터 “네, 면접에서 AI를 써도 됩니다. 사실은 꼭 쓰셔야 합니다”입니다. 백엔드, 머신러닝, 프런트엔드 지원자는 기술 면접에서 Copilot, Cursor, Claude 같은 도구를 쓰도록 하고, 백엔드·프런트엔드 직군에서는 알고리즘과 자료구조를 맨손으로 풀던 “컴퓨터 과학 기초” 면접을 “AI 지원 코딩” 면접으로 바꿨습니다.</p>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>자료구조·알고리즘:</strong> 데이터를 저장하는 방식(배열, 트리, 해시 테이블 등)과 문제를 푸는 절차(정렬, 탐색, 동적 계획법 등)를 다루는 컴퓨터 과학의 기초 분야입니다. 전통적인 코딩 테스트 문제가 주로 여기서 나옵니다.</li>
+</ul>
+</blockquote>
+<p>문제도 달라졌습니다. 캔바는 예시로 “붐비는 공항의 이착륙을 관리하는 제어 시스템 만들기”를 들었습니다. 프롬프트 한 번으로는 풀 수 없을 만큼 요구 사항이 복잡하고 모호한 문제를 낸다는 것입니다. 평가 기준은 다음과 같습니다.</p>
+<ul>
+<li>AI를 언제, 어떻게 써야 효과적인지 판단하는가</li>
+<li>복잡하고 모호한 요구 사항을 작게 나누는가</li>
+<li>AI를 생산성 도구로 쓰면서도 기술적 결정을 스스로 내리는가</li>
+<li>AI가 만든 코드의 문제를 찾아 고치는가</li>
+<li>결과물이 실제 서비스에 쓸 수준인가</li>
+</ul>
+<p>캔바는 시범 운영에서 좋은 결과를 낸 지원자들이 먼저 요구 사항을 묻고, AI에게는 범위가 분명한 작은 작업을 맡기고, 생성된 코드를 검토해 고쳤다고 전했습니다. 반대로 AI 경험이 적은 지원자는 코딩 실력보다 판단에서 어려움을 겪었다고 합니다. 사내 엔지니어들이 “면접이 바이브 코딩 시간이 되는 것 아니냐”고 걱정하자, 캔바는 기초 역량은 여전히 평가한다고 답했습니다.</p>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>바이브 코딩(vibe coding):</strong> 코드를 꼼꼼히 읽지 않고 AI에게 말로 지시해 나온 결과를 그대로 받아들이며 프로그램을 만드는 방식을 가리키는 말입니다. 빠르지만 결과를 검증하지 않는다는 비판이 따릅니다.</li>
+</ul>
+</blockquote>
+<p>국내에서는 넥슨이 눈에 띄는 사례입니다. 바이라인네트워크(2026년 9월 2일)에 따르면 넥슨은 채용 연계형 인턴십 “넥토리얼 for 프로그래머”에서 코딩 테스트를 없앴습니다. 대신 AI와 1시간가량 일대일로 대화하며 게임 프로그래머에게 필요한 전공 지식을 확인하는 AI 면접과, 회사가 제공하는 AI 도구로 실제 업무와 비슷한 문제를 푸는 평가를 도입했습니다. 이 평가에서는 AI에 대한 이해, 프롬프트 작성, 결과물과 함께 문제를 정의하고 생각을 구조화하는 과정을 본다고 합니다. 넥슨 채용팀장은 “AI 기술이 실제 현업에서 빠르게 도입되며 일하는 방식에 많은 변화가 있는 만큼 채용 방식 또한 변화가 필요하다고 판단했다”고 설명했습니다.</p>
+<h2 id="평가-항목은-무엇이-달라졌나">평가 항목은 무엇이 달라졌나</h2>
+<p>AI를 허용하는 회사들이 공개한 기준을 나란히 놓으면 공통점이 보입니다. 코드를 직접 빨리 쓰는 능력보다 <strong>AI가 내놓은 결과를 검증하고 책임지는 능력</strong>에 무게가 실립니다. 캔바는 “AI 코드의 문제를 찾아 고치는가”, 구글은 “출력 검증과 디버깅”, 넥슨은 “문제 정의와 사고 구조화”를 앞세웠습니다.</p>
+<p>설문도 같은 방향을 가리킵니다. CoderPad 2026 설문에서 AI를 허용한 평가에서 실제 실력을 보여 주는 신호로 가장 많이 꼽힌 것은 “AI의 실수를 찾아 고친다”(66%)였고, “트레이드오프와 정확성을 설명한다”(56%)가 뒤를 이었습니다. 엣지 케이스와 실패 상황 처리(28%), 보안·개인정보 고려(25%)는 그보다 훨씬 적게 꼽혔습니다.</p>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>트레이드오프:</strong> 하나를 얻으면 다른 하나를 내줘야 하는 관계입니다. 예를 들어 속도를 높이려고 메모리를 더 쓰는 선택처럼, 설계 결정마다 무엇을 얻고 무엇을 포기했는지 설명할 수 있어야 한다는 뜻으로 쓰입니다.</li>
+<li><strong>엣지 케이스:</strong> 빈 입력, 아주 큰 값, 동시에 들어온 요청처럼 평범한 경우에서 벗어난 극단적인 입력이나 상황입니다. AI가 만든 코드가 자주 놓치는 부분입니다.</li>
+</ul>
+</blockquote>
+<p><img alt="CoderPad State of Tech Hiring 2026 설문에서 AI를 허용할 때 실력을 보여 주는 신호로 꼽힌 항목의 가로 막대그래프. AI의 실수를 찾아 고친다 66%, 트레이드오프와 정확성을 설명한다 56%, 반복해서 AI 결과를 개선한다 28%, 엣지 케이스·실패 상황을 다룬다 28%, 보안·개인정보를 고려한다 25%." loading="lazy" decoding="async" width="1200" height="600" src="/_astro/fig-2-skill-signals.BvS_snI9_ZAHNWj.svg"></p>
+<p><em>그림 2. AI를 허용한 평가에서 실력을 보여 주는 신호로 꼽힌 항목 (자료: CoderPad State of Tech Hiring 2026, 약 650명 설문, 복수 응답, 2026-11-11 확인)</em></p>
+<p>같은 설문에서 앞으로 3년 동안 중요해질 역량을 순위로 매기게 하자 디버깅·세부 조정과 시스템 설계는 평균 순위가 조금 올라가고, 새 코드 작성은 내려갔습니다. Karat 조사에서도 리더들은 문제 해결, 적응력, AI 협업이 더 중요해졌고 깔끔한 코드, 언어 문법, 자료구조·알고리즘은 덜 중요해졌다고 답했습니다.</p>
+<p>이를 정리하면 다음과 같습니다. 왼쪽 열이 사라진다는 뜻은 아닙니다. 무게중심이 오른쪽으로 옮겨 가고 있다는 뜻입니다.</p>
+<table>
+<thead>
+<tr>
+<th>예전 평가가 주로 본 것</th>
+<th>지금 평가가 더 보는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정해진 시간 안에 정답 코드를 혼자 작성</td>
+<td>모호한 요구 사항을 정리하고 작게 나누기</td>
+</tr>
+<tr>
+<td>알고리즘·자료구조 문제 풀이</td>
+<td>기존 코드를 읽고 고치고 개선하기</td>
+</tr>
+<tr>
+<td>언어 문법과 표준 라이브러리 암기</td>
+<td>AI 출력의 오류·누락을 찾아 검증하기</td>
+</tr>
+<tr>
+<td>최종 코드의 정답 여부</td>
+<td>선택의 이유와 트레이드오프를 설명하기</td>
+</tr>
+</tbody>
+</table>
+<h2 id="입사-뒤-평가도-바뀌고-있다">입사 뒤 평가도 바뀌고 있다</h2>
+<p>채용만이 아닙니다. 일부 회사는 재직 중인 개발자의 인사 평가에도 AI 활용을 넣기 시작했습니다.</p>
+<p>Shopify의 토비 뤼트케 CEO는 2025년 3월 20일 사내 메모에서 AI 활용을 “기본 기대치”로 선언했습니다. 메모가 외부로 새어 나갈 것 같자 본인이 직접 공개했고, BetaKit 등이 2025년 4월 이를 보도했습니다. 메모에 따르면 인사 평가와 동료 평가 질문지에 AI 활용 관련 질문이 들어가고, 팀이 인력이나 자원을 더 요청하려면 먼저 AI로는 그 일을 할 수 없는 이유를 보여야 합니다. 구체적인 평가 질문은 공개되지 않았습니다.</p>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>동료 평가(peer review):</strong> 상사뿐 아니라 함께 일한 동료가 서로의 업무를 평가하는 인사 평가 방식입니다. 코드를 서로 검토하는 코드 리뷰와는 다른 말입니다.</li>
+</ul>
+</blockquote>
+<p>Microsoft에서는 개발자 부문 책임자인 줄리아 류슨이 2025년 6월 관리자들에게 “AI 사용은 더 이상 선택이 아니다”라는 메모를 보내, 직원의 AI 활용을 성과 평가에 반영하라고 했다고 Business Insider가 보도했습니다. 다음 회계연도 평가에 AI 사용량 지표를 넣는 방안도 검토한다고 전해졌지만, Microsoft가 구체적인 평가 기준을 공식 확인한 자료는 찾지 못했습니다. 인사 분야 전문가들 사이에서는 사용량을 재기 시작하면 실제 성과와 무관하게 도구를 켜 두기만 하는 “AI 연극(AI theater)“이 생길 수 있다는 비판이 나왔습니다(UNLEASH, 2025년 7월).</p>
+<h3 id="ai를-얼마나-쓰나는-좋은-지표일까">“AI를 얼마나 쓰나”는 좋은 지표일까</h3>
+<p>사용량을 평가에 넣기 어려운 이유는, AI가 실제로 생산성을 얼마나 올리는지조차 아직 측정이 어렵기 때문입니다.</p>
+<p>비영리 AI 평가 기관 METR는 2025년 7월, 대형 오픈 소스 저장소에서 일하는 숙련 개발자 16명이 실제 이슈 246건을 처리하는 무작위 대조 시험 결과를 발표했습니다. AI를 쓴 작업이 쓰지 않은 작업보다 오히려 19% 오래 걸렸습니다. 더 흥미로운 점은 개발자들의 느낌입니다. 시작 전에는 AI가 작업 시간을 24% 줄여 줄 거라고 예상했고, 실험이 끝난 뒤에도 20% 빨라졌다고 믿었습니다.</p>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>RCT(Randomized Controlled Trial, 무작위 대조 시험):</strong> 대상을 무작위로 두 집단에 나눠 한쪽에만 처치(여기서는 AI 사용 허용)를 하고 결과를 비교하는 연구 방법입니다. 다른 요인의 영향을 줄여 원인과 결과를 따지기 좋습니다.</li>
+</ul>
+</blockquote>
+<p>METR는 2026년 2월 후속 결과를 냈습니다. 개발자 57명이 800건 넘는 작업을 한 2025년 말 실험에서는 처음 참가자들이 18% 빨라졌고(신뢰구간 38% 빨라짐<del>9% 느려짐), 새 참가자들은 4% 빨라졌습니다(신뢰구간 15% 빨라짐</del>9% 느려짐). 그런데 METR는 이 수치를 “믿기 어려운 신호”라고 평가하고 실험 설계 자체를 바꾸기로 했습니다. AI 없이 일하기를 거부하는 개발자가 늘었고, 참가자의 30~50%가 AI 없이 하기 싫은 작업을 실험에서 빼 버렸기 때문입니다. METR는 실제 효과가 이 수치보다 클 가능성이 높다고 보면서도, 그 크기에 대해서는 근거가 약하다고 밝혔습니다.</p>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>신뢰구간:</strong> 측정값이 표본에 따라 흔들리는 범위를 감안할 때 실제 값이 있을 법한 구간입니다. 구간이 “빨라짐”과 “느려짐”을 모두 포함하면, 효과의 방향조차 확실하지 않다는 뜻입니다.</li>
+</ul>
+</blockquote>
+<p>DORA 2025 보고서도 비슷한 그림을 보여 줍니다. 응답자의 80% 이상이 AI로 생산성이 올랐다고 느꼈지만, 30%는 AI가 만든 코드를 거의 또는 전혀 믿지 않는다고 답했습니다. AI 도입은 배포 처리량과는 긍정적인 관계를 보였지만 배포 안정성과는 여전히 부정적인 관계였습니다. 보고서는 이를 “AI는 팀을 고쳐 주지 않는다. 이미 있는 것을 증폭할 뿐이다”라고 요약했습니다.</p>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>배포 처리량과 안정성:</strong> DORA가 소프트웨어 배포 성과를 보는 두 축입니다. 처리량은 변경을 얼마나 자주, 빨리 내보내는지이고, 안정성은 배포 뒤 장애나 되돌림이 얼마나 적은지입니다.</li>
+</ul>
+</blockquote>
+<p>개발자 스스로도 AI 결과를 그대로 믿지 않습니다. Stack Overflow 2026 개발자 설문에서 AI 출력을 얼마나 믿느냐는 질문(응답 14,304명)에 가장 많은 48.0%가 “쉽게 검증할 수 있을 때만 믿는다”고 답했고, “중요한 업무 결정까지 맡긴다”는 6.6%였습니다. 경력 1~5년 차에서는 이 비율이 4%였습니다.</p>
+<p>정리하면, 체감 생산성과 측정된 생산성이 어긋날 수 있고 AI 결과는 검증해야 쓸 수 있습니다. 그렇다면 “얼마나 자주 썼는가”보다 “AI를 써서 무엇을 만들었고, 그 품질을 어떻게 확인했는가”를 보는 편이 평가로서 더 의미 있습니다. 채용 면접이 검증 능력을 보기 시작한 것과 같은 이유입니다.</p>
+<h2 id="지원자와-현업-개발자가-지금-챙길-것">지원자와 현업 개발자가 지금 챙길 것</h2>
+<p>아래는 앞의 사례에서 공통으로 드러난 기준을 바탕으로 정리한 준비 방향입니다.</p>
+<ul>
+<li><strong>회사마다 규칙을 먼저 확인합니다.</strong> 같은 회사 안에서도 라운드마다 허용 범위가 다릅니다. Anthropic처럼 지원서와 과제, 면접의 규칙을 나눠 공개한 곳도 있고, 메타·구글처럼 일부 라운드에서만 시범 운영하는 곳도 있습니다. 허용 여부가 안내되지 않았다면 채용 담당자에게 묻는 것이 가장 확실합니다. 금지된 단계에서 몰래 쓰는 것은 부정행위로 처리됩니다.</li>
+<li><strong>기본기는 여전히 필요합니다.</strong> AI 출력을 검증하려면 그 코드가 맞는지 판단할 지식이 있어야 합니다. 캔바도 기초 역량은 계속 평가한다고 밝혔고, 메타와 구글은 AI 없이 치르는 라운드를 남겨 두었습니다.</li>
+<li><strong>생각을 말로 설명하는 연습을 합니다.</strong> AI를 허용한 면접에서는 “왜 이 방식을 골랐는지”, “AI의 제안 중 무엇을 왜 버렸는지”를 설명하는 과정이 곧 평가 대상입니다.</li>
+<li><strong>남이 쓴 코드를 읽고 고치는 연습을 합니다.</strong> 구글이 AI를 허용한 라운드는 새 코드 작성이 아니라 기존 코드 이해입니다. 오픈 소스 저장소의 이슈를 골라 코드를 읽고 고쳐 보는 연습이 도움이 됩니다.</li>
+<li><strong>AI가 만든 코드를 리뷰하는 습관을 들입니다.</strong> 엣지 케이스, 오류 처리, 보안을 따로 점검하고, 테스트를 직접 돌려 확인합니다. 설문에서 이 항목들을 꼽은 비율이 낮았다는 것은, 거꾸로 보면 이 부분을 챙기는 지원자가 눈에 띌 수 있다는 뜻이기도 합니다.</li>
+</ul>
+<blockquote>
+<p><strong>용어 풀이</strong></p>
+<ul>
+<li><strong>코드 리뷰:</strong> 다른 사람(또는 AI)이 작성한 코드를 병합하기 전에 읽고 오류, 설계 문제, 보안 취약점을 찾아 의견을 주는 과정입니다.</li>
+</ul>
+</blockquote>
+<h2 id="앞으로는-어떻게-흘러갈까-필자-의견">앞으로는 어떻게 흘러갈까 (필자 의견)</h2>
+<p>여기부터는 앞의 사실을 바탕으로 한 필자의 해석과 전망입니다. 확인된 사실이 아니며, 상황에 따라 틀릴 수 있습니다.</p>
+<p><strong>첫째, “허용이냐 금지냐”보다 “어디서 무엇을 허용하느냐”의 문제가 될 것으로 봅니다.</strong> 메타와 구글이 라운드를 나눈 방식이 하나의 표준처럼 자리 잡을 가능성이 높다고 생각합니다. 기본기를 보는 짧은 무(無)AI 라운드와 AI를 쓰는 실무형 라운드를 함께 두는 구조입니다. AI를 완전히 막는 방식은 부정행위 방지와 대면 면접 비용 부담이 계속 커지고, 완전히 여는 방식은 기본기를 확인할 수단이 사라진다는 약점이 있습니다.</p>
+<p><strong>둘째, 평가의 중심이 “작성”에서 “읽기와 검증”으로 더 옮겨 갈 것으로 봅니다.</strong> 코드를 생성하는 비용이 낮아질수록, 생성된 코드가 맞는지 판단하는 능력이 희소해집니다. 구글이 AI를 허용한 첫 라운드로 코드 이해를 고른 것, 설문에서 “AI의 실수를 찾아 고친다”가 1위인 것이 그 신호라고 생각합니다. 코드 리뷰 시뮬레이션, 버그가 심어진 코드 고치기, 설계 결정 설명하기 같은 형식이 늘어날 것 같습니다.</p>
+<p><strong>셋째, 과정을 남기는 평가가 늘어날 것으로 봅니다.</strong> 결과물만 보면 AI가 대신 만들었는지 구분하기 어렵기 때문에, 넥슨처럼 프롬프트와 문제 정의 과정까지 평가하거나 AI와 나눈 대화 기록을 함께 제출받는 방식이 확산될 수 있습니다. 동시에 신원 위장 같은 부정행위 걱정 때문에 최종 단계의 대면 확인도 쉽게 사라지지 않을 것입니다.</p>
+<p><strong>넷째, 인사 평가에서 “사용량” 지표는 오래가지 못할 것으로 봅니다.</strong> METR 실험이 보여 주듯 체감과 실제가 어긋날 수 있고, 사용량을 재면 보여 주기식 사용만 늘어납니다. 결국은 AI를 써서 낸 결과의 품질, 장애와 되돌림 비율, 리뷰 부담 같은 결과 지표로 옮겨 갈 것이라고 생각합니다. DORA가 말한 “증폭” 관점에서 보면, 평가해야 할 것은 도구 사용 여부가 아니라 팀의 기본 체계가 AI 속도를 감당하는지입니다.</p>
+<p><strong>다섯째, 신입 개발자에게는 문턱이 더 복잡해질 것으로 봅니다.</strong> 문법과 알고리즘 암기의 비중은 줄지만, AI 결과를 검증하려면 오히려 더 넓은 기초 지식과 판단력이 필요합니다. 경력 1~5년 차가 AI를 중요한 결정에 맡기는 비율이 가장 낮다는 Stack Overflow 결과도, 경험이 적을수록 검증에 자신이 없다는 뜻으로 읽힙니다. 기초를 탄탄히 하면서 AI를 비판적으로 쓰는 경험을 함께 쌓은 사람이 유리해질 것입니다.</p>
+<h2 id="기준과-한계">기준과 한계</h2>
+<ul>
+<li>모든 사례와 수치는 2026년 11월 11일에 원문 또는 보도를 확인했습니다. 채용 방식은 회사 사정에 따라 수시로 바뀌므로 실제 지원 전에는 해당 회사 안내를 다시 확인하세요.</li>
+<li>캔바(공식 블로그), Anthropic(공식 안내), METR·Stack Overflow·DORA(공식 발표)는 1차 자료입니다. 메타, 구글, Shopify, Microsoft, 넥슨 사례는 언론 보도로 확인했으며, 메타·구글·Microsoft는 내부 문서를 본 매체의 보도에 기댄 부분이 있습니다. 메타 원보도(404 Media)는 유료 구독 벽 때문에 앞부분만 확인했고, 구글 2026년 시범 운영은 Business Insider 원문 대신 이를 인용한 보도(아시아경제, Moneywise)로 확인했습니다.</li>
+<li>Karat와 CoderPad는 채용 평가 서비스를 판매하는 회사로, 조사 결과에 이해관계가 있을 수 있습니다. 두 조사 모두 조사 기간과 세부 질문 문항을 공개하지 않았고, 표본과 질문이 달라 “AI 금지” 비율(62%, 34%)을 직접 비교할 수 없습니다.</li>
+<li>그림 2의 CoderPad 수치는 합계가 100%를 넘어 복수 응답으로 보았습니다. 응답자 집단별 구분은 공개되지 않았습니다.</li>
+<li>확인하지 못한 사항: 메타 AI 지원 면접의 현재 적용 범위와 정식 도입 여부, 구글 시범 운영의 정확한 직급 범위(보도마다 표현이 다름), 2026년 10월 이후 구글 내 확대 여부, Shopify 인사 평가 질문의 구체적인 문항, Microsoft의 AI 사용량 지표 도입 여부.</li>
+<li>“앞으로는 어떻게 흘러갈까” 절은 필자의 의견이며, 이를 뒷받침하는 별도의 조사나 측정은 하지 않았습니다.</li>
+</ul>
+</div><section class="post-sources" aria-labelledby="sources-heading"><h2 id="sources-heading">출처</h2><ol><li><a href="https://canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews" rel="noopener">Yes, You Can Use AI in Our Interviews. In fact, we insist - Canva Engineering Blog</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://www.anthropic.com/candidate-ai-guidance" rel="noopener">How to collaborate with Claude during our hiring process - Anthropic</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://www.404media.co/meta-is-going-to-let-job-candidates-use-ai-during-coding-tests/" rel="noopener">Meta Is Going to Let Job Candidates Use AI During Coding Tests - 404 Media</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://www.asiae.co.kr/en/article/2026050809233801400" rel="noopener">&quot;Human-Led, AI-Assisted&quot;... Google Allows AI Assistance in Developer Interviews - Asia Economy</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://finance.yahoo.com/sectors/technology/articles/asking-kid-math-test-without-151500986.html" rel="noopener">&#39;Like asking a kid to take a math test without a calculator&#39;: Google will let candidates use AI in interviews - Moneywise (Yahoo Finance)</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://www.entrepreneur.com/business-news/google-mckinsey-reintroduce-in-person-interviews-due-to-ai/496041" rel="noopener">Major Companies Including Google and McKinsey Are Bringing Back In-Person Job Interviews to Combat AI Cheating - Entrepreneur</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://byline.network/2026/09/2-451/" rel="noopener">코딩 테스트 없앤 넥슨, &#39;AI와 일하는 미래 개발자&#39; 뽑는다 - 바이라인네트워크</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://karat.com/engineering-interview-trends-2026/" rel="noopener">Engineering Interviews in 2026: 3 Trends Hiring Leaders Must Prepare For - Karat</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://coderpad.io/survey-reports/coderpad-state-of-tech-hiring-2026/" rel="noopener">CoderPad State of Tech Hiring 2026</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://betakit.com/shopify-ceo-tobi-lutke-tells-employees-to-prove-ai-cant-do-the-job-before-asking-for-resources/" rel="noopener">Shopify CEO Tobi Lütke tells employees to prove AI can&#39;t do the job before asking for resources - BetaKit</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://www.unleash.ai/artificial-intelligence/ai-is-no-longer-optional-at-microsoft-is-this-the-right-way-to-drive-workplace-ai-adoption/" rel="noopener">AI is no longer optional at Microsoft – is this the right way to drive workplace AI adoption? - UNLEASH</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" rel="noopener">Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity - METR</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://metr.org/blog/2026-02-24-uplift-update/" rel="noopener">We are Changing our Developer Productivity Experiment Design - METR</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://survey.stackoverflow.co/2026/ai/data/ai-trust" rel="noopener">Trust in AI tools - Stack Overflow Developer Survey 2026</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li><li><a href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report" rel="noopener">Announcing the 2025 DORA Report - Google Cloud Blog</a> (확인일 <time datetime="2026-11-11">2026년 11월 11일</time>)</li></ol></section><p class="article-back"><a class="button button-outline" href="/">글 목록으로 돌아가기</a></p></article></div></main><footer class="site-footer"><p class="footer-note">글에 나온 명령어와 설정은 작성 시점의 버전을 기준으로 합니다.<br>운영 환경에 적용하기 전에 공식 문서와 테스트 환경에서 먼저 확인해 주세요.</p><nav class="footer-links" aria-label="하단 메뉴"><a href="/#posts">글 둘러보기</a><a href="/tags/">태그</a><a href="/about/">소개</a><a href="/rss.xml">RSS</a></nav><p>&copy; 2026 StackGuide</p><p class="footer-credits">디자인 기반: <a href="https://github.com/manuelernestog/astrofy">Astrofy</a>(<a href="/licenses/astrofy.txt">라이선스</a>) · 색상 테마: daisyUI business·corporate (<a href="/licenses/daisyui.txt">라이선스</a>) · 아이콘: <a href="/licenses/lucide.txt">Lucide</a></p></footer></div></div><script type="module">var e=document.querySelector(`[data-layout]`),t=document.querySelector(`[data-drawer-open]`),n=document.querySelector(`[data-drawer]`);if(e&&t&&n){function r(r){e&&t&&n&&(e.classList.toggle(`drawer-open`,r),t.setAttribute(`aria-expanded`,String(r)),r?n.querySelector(`[data-drawer-close]`)?.focus():t.focus())}t.addEventListener(`click`,()=>r(!0)),document.querySelectorAll(`[data-drawer-close]`).forEach(e=>{e.addEventListener(`click`,()=>r(!1))}),n.querySelectorAll(`a`).forEach(t=>t.addEventListener(`click`,()=>{e.classList.contains(`drawer-open`)&&r(!1)})),document.addEventListener(`keydown`,t=>{t.key===`Escape`&&e.classList.contains(`drawer-open`)&&r(!1)})}</script></body></html>
