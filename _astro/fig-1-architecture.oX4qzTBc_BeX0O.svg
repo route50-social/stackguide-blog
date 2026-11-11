@@ -1,0 +1,75 @@
+<!-- 그림 1: 무료 배포에서 Next.js 앱과 PostgreSQL을 서로 다른 서비스에 두고 풀링 접속 주소로 연결하는 구조 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="fig1-title fig1-desc">
+  <title id="fig1-title">앱 호스팅과 관리형 PostgreSQL을 나눈 무료 배포 구조</title>
+  <desc id="fig1-desc">1 브라우저의 요청이 2 앱 호스팅(Vercel, Netlify, Cloudflare Workers, Render 등)에서 실행되는 Next.js로 가고, Next.js는 환경 변수 DATABASE_URL에 넣은 풀링 접속 주소로 3 관리형 PostgreSQL(Neon, Supabase, Prisma Postgres)에 연결합니다.</desc>
+  <defs>
+    <marker id="f1-arrow" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M5 2 L12 7 L5 12" fill="none" stroke="#334155" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="560" rx="16" fill="#f8fafc" />
+  <rect x="1" y="1" width="1198" height="558" rx="16" fill="none" stroke="#cbd5e1" stroke-width="2" />
+
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+    <text x="64" y="88" font-size="36" font-weight="700" fill="#1e293b">앱과 DB를 나눠 올리는 무료 배포 구조</text>
+    <text x="64" y="132" font-size="24" fill="#475569">앱 호스팅과 PostgreSQL 서비스는 접속 주소 하나로만 연결됩니다</text>
+
+    <!-- 상자: 같은 높이 256, 간격 80 -->
+    <g stroke="#94a3b8" stroke-width="2">
+      <rect x="64" y="184" width="240" height="256" rx="16" fill="#e2e8f0" />
+      <rect x="384" y="184" width="352" height="256" rx="16" fill="#dbeafe" />
+      <rect x="816" y="184" width="320" height="256" rx="16" fill="#dcfce7" />
+    </g>
+    <g fill="#ffffff" stroke="#64748b" stroke-width="2">
+      <circle cx="104" cy="224" r="22" />
+      <circle cx="424" cy="224" r="22" />
+      <circle cx="856" cy="224" r="22" />
+    </g>
+    <g font-size="24" font-weight="700" fill="#334155" text-anchor="middle">
+      <text x="104" y="232">1</text>
+      <text x="424" y="232">2</text>
+      <text x="856" y="232">3</text>
+    </g>
+
+    <!-- 1 브라우저 -->
+    <text x="140" y="233" font-size="28" font-weight="700" fill="#1e293b">브라우저</text>
+    <g font-size="22" fill="#475569">
+      <text x="88" y="296">방문자가</text>
+      <text x="88" y="328">서비스 주소로</text>
+      <text x="88" y="360">접속</text>
+    </g>
+
+    <!-- 2 앱 호스팅 -->
+    <text x="460" y="233" font-size="28" font-weight="700" fill="#1e293b">앱 호스팅 + Next.js</text>
+    <g font-size="22" fill="#1e3a8a">
+      <text x="408" y="296">Vercel · Netlify</text>
+      <text x="408" y="328">Cloudflare Workers</text>
+      <text x="408" y="360">Render · Railway · Koyeb</text>
+    </g>
+    <rect x="408" y="384" width="304" height="40" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="2" />
+    <text x="424" y="412" font-size="22" font-family="'JetBrains Mono', Menlo, Consolas, monospace" fill="#1e293b">DATABASE_URL=…</text>
+
+    <!-- 3 PostgreSQL -->
+    <text x="892" y="232" font-size="26" font-weight="700" fill="#1e293b">관리형 PostgreSQL</text>
+    <g font-size="22" fill="#14532d">
+      <text x="840" y="296">Neon</text>
+      <text x="840" y="328">Supabase</text>
+      <text x="840" y="360">Prisma Postgres</text>
+    </g>
+    <text x="840" y="412" font-size="22" fill="#15803d">풀러(PgBouncer 등)</text>
+
+    <!-- 화살표 -->
+    <g stroke="#334155" stroke-width="3" fill="none" marker-end="url(#f1-arrow)">
+      <path d="M304 312 H380" />
+      <path d="M736 312 H812" />
+    </g>
+    <g font-size="22" fill="#334155" text-anchor="middle">
+      <text x="344" y="296">요청</text>
+      <text x="776" y="296">SQL</text>
+    </g>
+
+    <!-- 아래 설명 -->
+    <text x="64" y="496" font-size="22" fill="#475569">서버리스 환경에서는 DB 콘솔이 주는 풀링용 접속 주소를 환경 변수에 넣어 연결 수 한도를 피합니다.</text>
+  </g>
+</svg>
