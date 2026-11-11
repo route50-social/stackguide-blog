@@ -1,0 +1,101 @@
+<!-- 그림 2: 첫 서비스를 올릴 인프라를 고르는 질문 순서 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 980" role="img" aria-labelledby="fig2-title fig2-desc">
+  <title id="fig2-title">첫 배포 인프라 선택 흐름</title>
+  <desc id="fig2-desc">세 가지 질문을 차례로 답합니다. 1. 정적 사이트이면 정적 호스팅을 씁니다. 2. PHP와 MySQL로 충분하면 카페24 같은 웹호스팅을 씁니다. 3. 그 밖에는 가상 서버나 관리형 앱 호스팅으로 가며, 가장 중요한 조건에 따라 무료 학습이면 오라클 Always Free나 AWS 무료 플랜, 고정 월 요금이면 AWS Lightsail이나 카페24 VPS, 원화 결제와 국내 지원이면 네이버 클라우드, 회사가 Microsoft 환경이면 Azure를 고릅니다.</desc>
+  <defs>
+    <marker id="arrow2" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M5 2 L12 7 L5 12" fill="none" stroke="#334155" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="980" rx="16" fill="#f8fafc" />
+  <rect x="1" y="1" width="1198" height="978" rx="16" fill="none" stroke="#cbd5e1" stroke-width="2" />
+
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+    <text x="64" y="96" font-size="38" font-weight="700" fill="#1e293b">첫 배포 인프라, 이 순서로 좁혀 보세요</text>
+    <text x="64" y="140" font-size="24" fill="#475569">위 질문에서 '예'가 나오면 오른쪽 선택지로, '아니요'면 아래로 내려갑니다</text>
+
+    <!-- 질문 상자: 너비 560, 높이 104, 같은 간격 -->
+    <g stroke="#94a3b8" stroke-width="2">
+      <rect x="64" y="184" width="560" height="104" rx="16" fill="#e0e7ff" />
+      <rect x="64" y="344" width="560" height="104" rx="16" fill="#e0e7ff" />
+      <rect x="64" y="504" width="560" height="104" rx="16" fill="#e0e7ff" />
+    </g>
+    <g fill="#ffffff" stroke="#64748b" stroke-width="2">
+      <circle cx="108" cy="236" r="24" />
+      <circle cx="108" cy="396" r="24" />
+      <circle cx="108" cy="556" r="24" />
+    </g>
+    <g font-size="26" font-weight="700" fill="#334155" text-anchor="middle">
+      <text x="108" y="245">1</text>
+      <text x="108" y="405">2</text>
+      <text x="108" y="565">3</text>
+    </g>
+    <g font-size="26" font-weight="700" fill="#1e293b">
+      <text x="152" y="230">서버 코드 없는 정적 사이트인가요?</text>
+      <text x="152" y="390">PHP·MySQL로 충분한가요?</text>
+      <text x="152" y="550">Node.js·Python·Java가 필요하거나</text>
+    </g>
+    <g font-size="22" fill="#475569">
+      <text x="152" y="266">HTML·CSS·JS, 정적 블로그</text>
+      <text x="152" y="426">워드프레스, 게시판, 소개 사이트</text>
+      <text x="152" y="586">서버를 직접 다뤄 보고 싶다면</text>
+    </g>
+
+    <!-- 답 상자 (예) -->
+    <g stroke="#16a34a" stroke-width="2">
+      <rect x="720" y="184" width="416" height="104" rx="16" fill="#dcfce7" />
+      <rect x="720" y="344" width="416" height="104" rx="16" fill="#dcfce7" />
+    </g>
+    <g font-size="26" font-weight="700" fill="#15803d">
+      <text x="744" y="230">정적 호스팅</text>
+      <text x="744" y="390">웹호스팅</text>
+    </g>
+    <g font-size="22" fill="#1e293b">
+      <text x="744" y="266">GitHub Pages 등, 서버 관리 없음</text>
+      <text x="744" y="426">카페24 공유 호스팅 등</text>
+    </g>
+
+    <!-- 예 화살표 -->
+    <g stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow2)">
+      <path d="M624 236 H714" />
+      <path d="M624 396 H714" />
+    </g>
+    <g font-size="22" font-weight="700" fill="#15803d">
+      <text x="652" y="224">예</text>
+      <text x="652" y="384">예</text>
+    </g>
+
+    <!-- 아니요 화살표 -->
+    <g stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow2)">
+      <path d="M344 288 V338" />
+      <path d="M344 448 V498" />
+      <path d="M344 608 V658" />
+    </g>
+    <g font-size="22" fill="#475569">
+      <text x="360" y="322">아니요</text>
+      <text x="360" y="482">아니요</text>
+      <text x="360" y="642">예: 가장 중요한 조건은?</text>
+    </g>
+
+    <!-- 조건별 선택지: 2열 × 2행, 같은 크기(520×120) -->
+    <g stroke="#94a3b8" stroke-width="2" fill="#ffffff">
+      <rect x="64" y="672" width="520" height="120" rx="16" />
+      <rect x="616" y="672" width="520" height="120" rx="16" />
+      <rect x="64" y="816" width="520" height="120" rx="16" />
+      <rect x="616" y="816" width="520" height="120" rx="16" />
+    </g>
+    <g font-size="24" font-weight="700" fill="#1e293b">
+      <text x="88" y="716">비용 0원으로 학습</text>
+      <text x="640" y="716">매달 같은 요금, 쉬운 시작</text>
+      <text x="88" y="860">원화 결제·국내 지원</text>
+      <text x="640" y="860">회사가 Microsoft 환경</text>
+    </g>
+    <g font-size="22" fill="#475569">
+      <text x="88" y="756">오라클 Always Free, AWS 무료 플랜</text>
+      <text x="640" y="756">AWS Lightsail, 카페24 VPS</text>
+      <text x="88" y="900">네이버 클라우드</text>
+      <text x="640" y="900">Azure</text>
+    </g>
+  </g>
+</svg>
