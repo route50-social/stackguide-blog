@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="cover-title cover-desc">
+  <!-- 표지: 언덕 위 작은 집(내 서버)으로 손수레가 종이 상자(코드)와 파란 원통(데이터베이스)을 싣고 올라가는 아침 풍경 -->
+  <title id="cover-title">언덕 위 작은 집으로 짐을 싣고 올라가는 손수레</title>
+  <desc id="cover-desc">아침 하늘 아래 초록 언덕 위에 창문에 불이 켜진 작은 집이 있고, 문에는 작은 자물쇠가, 지붕 옆에는 파란 핀이 꽂힌 둥근 번지판이 달려 있습니다. 구불구불한 오솔길 아래쪽에서 손수레가 종이 상자 하나와 파란 원통 하나를 싣고 집을 향해 올라가고 있습니다.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9fd3e0" />
+      <stop offset="0.6" stop-color="#d9ecef" />
+      <stop offset="1" stop-color="#f7e4c6" />
+    </linearGradient>
+    <radialGradient id="sun" cx="0.82" cy="0.16" r="0.5">
+      <stop offset="0" stop-color="#fff7d6" stop-opacity="0.95" />
+      <stop offset="0.35" stop-color="#fde68a" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#fde68a" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fb9a8" />
+      <stop offset="1" stop-color="#6e9f8c" />
+    </linearGradient>
+    <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6fae74" />
+      <stop offset="1" stop-color="#4b8a55" />
+    </linearGradient>
+    <linearGradient id="hillNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a9a5c" />
+      <stop offset="1" stop-color="#2f6b3c" />
+    </linearGradient>
+    <linearGradient id="path" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9d3a8" />
+      <stop offset="1" stop-color="#c9a46a" />
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fbf5ea" />
+      <stop offset="1" stop-color="#e7dccb" />
+    </linearGradient>
+    <linearGradient id="wallSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d6c7b0" />
+      <stop offset="1" stop-color="#bfae94" />
+    </linearGradient>
+    <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3f5f73" />
+      <stop offset="1" stop-color="#2b4352" />
+    </linearGradient>
+    <radialGradient id="windowLight" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0" stop-color="#fff3b0" />
+      <stop offset="1" stop-color="#f59e0b" />
+    </radialGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fde68a" stop-opacity="0.55" />
+      <stop offset="1" stop-color="#fde68a" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2b77a" />
+      <stop offset="1" stop-color="#b9864a" />
+    </linearGradient>
+    <linearGradient id="boxSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a87640" />
+      <stop offset="1" stop-color="#8c5f30" />
+    </linearGradient>
+    <linearGradient id="drum" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1e4f8a" />
+      <stop offset="0.45" stop-color="#3b82c4" />
+      <stop offset="1" stop-color="#1c3f6e" />
+    </linearGradient>
+    <linearGradient id="cart" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9a6b43" />
+      <stop offset="1" stop-color="#6b4527" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#17321f" flood-opacity="0.35" />
+    </filter>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#17321f" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- 하늘과 해 -->
+  <rect width="1600" height="900" fill="url(#sky)" />
+  <rect width="1600" height="900" fill="url(#sun)" />
+  <circle cx="1312" cy="150" r="56" fill="#fff8dc" opacity="0.9" />
+
+  <!-- 구름 -->
+  <g fill="#ffffff" opacity="0.75">
+    <ellipse cx="300" cy="170" rx="120" ry="30" />
+    <ellipse cx="360" cy="150" rx="80" ry="34" />
+    <ellipse cx="980" cy="120" rx="140" ry="26" />
+    <ellipse cx="1040" cy="104" rx="70" ry="26" />
+  </g>
+
+  <!-- 먼 언덕 -->
+  <path d="M0 520 C 220 430 420 470 620 430 C 820 390 1040 450 1240 400 C 1400 362 1520 390 1600 380 L1600 900 L0 900 Z" fill="url(#hillFar)" />
+  <!-- 중간 언덕 (집이 놓인 곳) -->
+  <path d="M0 640 C 260 590 520 600 760 540 C 900 505 1000 470 1120 470 C 1260 470 1420 520 1600 540 L1600 900 L0 900 Z" fill="url(#hillMid)" />
+  <!-- 가까운 언덕 -->
+  <path d="M0 760 C 300 700 620 730 900 700 C 1160 672 1400 700 1600 690 L1600 900 L0 900 Z" fill="url(#hillNear)" />
+
+  <!-- 오솔길: 아래 왼쪽에서 집 앞까지 -->
+  <path d="M260 900 C 360 820 560 800 640 740 C 720 680 760 640 880 610 C 980 586 1040 560 1080 532 L1130 536 C 1100 572 1030 606 930 632 C 820 662 790 704 720 760 C 640 822 480 850 430 900 Z" fill="url(#path)" opacity="0.95" />
+
+  <!-- 집 뒤 나무 -->
+  <g filter="url(#softShadow)">
+    <rect x="1336" y="420" width="16" height="90" fill="#5b3b22" />
+    <circle cx="1344" cy="400" r="58" fill="#3f7d4a" />
+    <circle cx="1310" cy="430" r="40" fill="#4c8f56" />
+    <circle cx="1378" cy="426" r="42" fill="#36703f" />
+  </g>
+
+  <!-- 집 -->
+  <g filter="url(#shadow)">
+    <!-- 옆벽 -->
+    <polygon points="1240,362 1300,330 1300,512 1240,530" fill="url(#wallSide)" />
+    <!-- 앞벽 -->
+    <rect x="1000" y="362" width="240" height="168" fill="url(#wall)" />
+    <!-- 지붕 -->
+    <polygon points="980,370 1120,262 1260,370" fill="url(#roof)" />
+    <polygon points="1120,262 1290,236 1320,336 1260,370" fill="#24394a" />
+    <!-- 굴뚝 -->
+    <rect x="1192" y="246" width="30" height="64" fill="#7b4b33" />
+    <rect x="1186" y="240" width="42" height="12" fill="#5e3826" />
+  </g>
+  <!-- 창문 빛 -->
+  <circle cx="1060" cy="430" r="80" fill="url(#glow)" />
+  <rect x="1026" y="398" width="68" height="64" rx="6" fill="url(#windowLight)" stroke="#5e4a33" stroke-width="5" />
+  <path d="M1060 398 V462 M1026 430 H1094" stroke="#5e4a33" stroke-width="4" />
+  <!-- 문과 자물쇠 -->
+  <rect x="1140" y="420" width="70" height="110" rx="6" fill="#7a4e2e" stroke="#5a3820" stroke-width="4" />
+  <g>
+    <path d="M1166 470 v-10 a9 9 0 0 1 18 0 v10" fill="none" stroke="#e5e7eb" stroke-width="4" />
+    <rect x="1160" y="468" width="30" height="24" rx="4" fill="#f59e0b" stroke="#b45309" stroke-width="2" />
+    <circle cx="1175" cy="480" r="3.5" fill="#7c2d12" />
+  </g>
+  <!-- 번지판과 핀 -->
+  <g>
+    <circle cx="1270" cy="420" r="22" fill="#f8fafc" stroke="#475569" stroke-width="3" />
+    <path d="M1270 404 l7 11 h-14 z" fill="#2563eb" />
+    <rect x="1268" y="414" width="4" height="14" fill="#1e3a8a" />
+  </g>
+
+  <!-- 손수레와 짐 -->
+  <g filter="url(#shadow)" transform="translate(560 640) rotate(-14)">
+    <!-- 손잡이 -->
+    <path d="M-150 30 L-40 52" stroke="#5b3b22" stroke-width="12" stroke-linecap="round" />
+    <!-- 수레 바닥 -->
+    <polygon points="-50,40 210,40 196,92 -36,92" fill="url(#cart)" />
+    <rect x="-50" y="32" width="260" height="14" rx="4" fill="#b07d50" />
+    <!-- 종이 상자 (코드) -->
+    <rect x="-26" y="-74" width="120" height="108" fill="url(#box)" />
+    <polygon points="94,-74 120,-90 120,20 94,34" fill="url(#boxSide)" />
+    <polygon points="-26,-74 0,-90 120,-90 94,-74" fill="#efc890" />
+    <rect x="22" y="-74" width="24" height="108" fill="#d8a868" opacity="0.8" />
+    <path d="M6 -36 l-16 14 l16 14 M58 -36 l16 14 l-16 14 M42 -42 l-14 44" fill="none" stroke="#6b4527" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- 파란 원통 (데이터베이스) -->
+    <rect x="128" y="-60" width="72" height="94" fill="url(#drum)" />
+    <ellipse cx="164" cy="34" rx="36" ry="10" fill="#1c3f6e" />
+    <ellipse cx="164" cy="-60" rx="36" ry="11" fill="#6aa8dd" />
+    <path d="M128 -26 a36 10 0 0 0 72 0 M128 6 a36 10 0 0 0 72 0" fill="none" stroke="#bfdbfe" stroke-width="4" opacity="0.8" />
+    <!-- 바퀴 -->
+    <circle cx="160" cy="104" r="30" fill="#334155" />
+    <circle cx="160" cy="104" r="12" fill="#94a3b8" />
+    <path d="M160 74 V134 M130 104 H190" stroke="#64748b" stroke-width="4" />
+  </g>
+
+  <!-- 앞쪽 풀과 꽃 -->
+  <g fill="#2f6b3c">
+    <path d="M120 900 q10 -60 20 0 z M150 900 q14 -80 26 0 z M1460 900 q10 -70 22 0 z M1500 900 q12 -54 22 0 z" />
+  </g>
+  <g>
+    <circle cx="200" cy="820" r="7" fill="#f59e0b" />
+    <circle cx="232" cy="840" r="6" fill="#fde68a" />
+    <circle cx="1420" cy="800" r="7" fill="#f59e0b" />
+    <circle cx="1448" cy="826" r="6" fill="#fde68a" />
+  </g>
+</svg>
