@@ -1,0 +1,98 @@
+<!-- 표지: 나무 책상 위에 크기가 줄어드는 마트료시카 인형 네 개. 큰 개념 안에 작은 개념이 들어 있는 포함 관계를 상징 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="cover-title cover-desc">
+  <title id="cover-title">마트료시카 인형 네 개가 놓인 책상</title>
+  <desc id="cover-desc">따뜻한 조명이 비치는 나무 책상 위에 크기가 점점 작아지는 붉은 마트료시카 인형 네 개가 나란히 서 있습니다. 맨 왼쪽의 가장 큰 인형은 위쪽 절반이 들려 있어 속이 비어 있는 모습이 보입니다.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f2a37" />
+      <stop offset="1" stop-color="#2f3b4a" />
+    </linearGradient>
+    <radialGradient id="lamp" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fde68a" stop-opacity="0.55" />
+      <stop offset="0.6" stop-color="#f59e0b" stop-opacity="0.12" />
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="desk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a16207" />
+      <stop offset="0.15" stop-color="#854d0e" />
+      <stop offset="1" stop-color="#422006" />
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7f1d1d" />
+      <stop offset="0.35" stop-color="#dc2626" />
+      <stop offset="0.6" stop-color="#b91c1c" />
+      <stop offset="1" stop-color="#5f1414" />
+    </linearGradient>
+    <linearGradient id="inside" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d6b38a" />
+      <stop offset="1" stop-color="#92643a" />
+    </linearGradient>
+    <radialGradient id="face" cx="0.45" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#fff7ed" />
+      <stop offset="1" stop-color="#fcd9b6" />
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="10" dy="16" stdDeviation="14" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+    <clipPath id="lower"><rect x="-200" y="-150" width="400" height="200" /></clipPath>
+    <clipPath id="upper"><rect x="-200" y="-400" width="400" height="250" /></clipPath>
+
+    <!-- 인형 하나 (바닥 가운데가 원점, 높이 약 300) -->
+    <g id="doll">
+      <path d="M-80 0 C-96 -60 -92 -130 -62 -170 C-78 -200 -82 -252 -50 -286 C-28 -308 28 -308 50 -286 C82 -252 78 -200 62 -170 C92 -130 96 -60 80 0 Z" fill="url(#body)" />
+      <path d="M-62 -170 C-30 -160 30 -160 62 -170" fill="none" stroke="#f59e0b" stroke-width="5" />
+      <ellipse cx="0" cy="-236" rx="36" ry="38" fill="url(#face)" />
+      <path d="M-36 -240 C-34 -282 34 -282 36 -240 C24 -262 -24 -262 -36 -240 Z" fill="#3f1d0b" />
+      <circle cx="-13" cy="-234" r="4" fill="#1f2937" />
+      <circle cx="13" cy="-234" r="4" fill="#1f2937" />
+      <circle cx="-20" cy="-220" r="6" fill="#f87171" opacity="0.7" />
+      <circle cx="20" cy="-220" r="6" fill="#f87171" opacity="0.7" />
+      <path d="M-7 -212 Q0 -206 7 -212" fill="none" stroke="#9f1239" stroke-width="3" stroke-linecap="round" />
+      <ellipse cx="0" cy="-82" rx="52" ry="62" fill="#fef3c7" />
+      <g fill="#dc2626">
+        <circle cx="0" cy="-106" r="12" />
+        <circle cx="0" cy="-58" r="12" />
+        <circle cx="-24" cy="-82" r="12" />
+        <circle cx="24" cy="-82" r="12" />
+      </g>
+      <circle cx="0" cy="-82" r="12" fill="#f59e0b" />
+      <path d="M-30 -24 Q0 -12 30 -24" fill="none" stroke="#15803d" stroke-width="5" stroke-linecap="round" />
+      <path d="M-52 -140 C-40 -60 -50 -20 -64 -2" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="8" stroke-linecap="round" />
+    </g>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#wall)" />
+  <circle cx="760" cy="300" r="620" fill="url(#lamp)" />
+  <rect x="0" y="720" width="1600" height="180" fill="url(#desk)" />
+  <rect x="0" y="716" width="1600" height="8" fill="#ca8a04" opacity="0.55" />
+  <g stroke="#3b1d06" stroke-opacity="0.35" stroke-width="3" fill="none">
+    <path d="M0 790 C300 780 600 800 900 788 S1400 795 1600 784" />
+    <path d="M0 850 C350 842 700 860 1050 848 S1450 856 1600 846" />
+  </g>
+
+  <!-- 바닥 그림자 -->
+  <g fill="#000000" opacity="0.4">
+    <ellipse cx="440" cy="772" rx="150" ry="22" />
+    <ellipse cx="790" cy="770" rx="112" ry="18" />
+    <ellipse cx="1050" cy="768" rx="86" ry="14" />
+    <ellipse cx="1240" cy="766" rx="62" ry="11" />
+  </g>
+
+  <!-- 가장 큰 인형: 아래쪽 절반과 들어 올린 위쪽 절반 -->
+  <g transform="translate(440 770) scale(1.55)" filter="url(#soft)">
+    <ellipse cx="0" cy="-150" rx="76" ry="14" fill="url(#inside)" />
+    <use href="#doll" clip-path="url(#lower)" />
+    <ellipse cx="0" cy="-150" rx="70" ry="11" fill="#5b3a1c" />
+  </g>
+  <g transform="translate(480 420) rotate(14) scale(1.55) translate(0 150)" filter="url(#soft)">
+    <use href="#doll" clip-path="url(#upper)" />
+    <path d="M-63 -150 Q0 -138 63 -150" fill="none" stroke="#5b3a1c" stroke-width="4" />
+  </g>
+
+  <!-- 나머지 인형 -->
+  <g filter="url(#soft)">
+    <use href="#doll" transform="translate(790 768) scale(1.18)" />
+    <use href="#doll" transform="translate(1050 766) scale(0.9)" />
+    <use href="#doll" transform="translate(1240 764) scale(0.66)" />
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<!-- 그림 1: AI ⊃ 머신러닝 ⊃ 딥러닝 ⊃ LLM 포함 관계를 동심원으로 그리고 오른쪽에 원마다 설명과 예시를 둔 그림 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="fig1-title fig1-desc">
+  <title id="fig1-title">AI, 머신러닝, 딥러닝, LLM의 포함 관계</title>
+  <desc id="fig1-desc">가장 큰 원 AI 안에 머신러닝 원, 그 안에 딥러닝 원, 가장 안쪽에 LLM 원이 있습니다. AI는 규칙 기반 시스템까지 포함하는 가장 넓은 범위이고, 머신러닝은 데이터에서 규칙을 학습하는 방법으로 스팸 메일 필터가 예입니다. 딥러닝은 여러 층의 신경망을 쓰는 방법으로 사진 속 사물 인식이 예이며, LLM은 언어를 다루는 큰 딥러닝 모델로 ChatGPT, Claude, Gemini의 바탕이 됩니다.</desc>
+
+  <rect width="1200" height="800" rx="16" fill="#f8fafc" />
+  <rect x="1" y="1" width="1198" height="798" rx="16" fill="none" stroke="#cbd5e1" stroke-width="2" />
+
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+    <text x="64" y="88" font-size="36" font-weight="700" fill="#1e293b">큰 원 안에 작은 원: 네 용어의 포함 관계</text>
+    <text x="64" y="132" font-size="24" fill="#475569">바깥 원일수록 넓은 개념이고, 안쪽 원은 바깥 원의 한 갈래입니다</text>
+
+    <!-- 동심원: 아래쪽 끝(y=760)을 맞춰 겹쳐 그림 -->
+    <circle cx="340" cy="490" r="270" fill="#e0e7ff" stroke="#6366f1" stroke-width="3" />
+    <circle cx="340" cy="555" r="205" fill="#c7d2fe" stroke="#6366f1" stroke-width="3" />
+    <circle cx="340" cy="620" r="140" fill="#a5b4fc" stroke="#4f46e5" stroke-width="3" />
+    <circle cx="340" cy="685" r="75" fill="#4338ca" stroke="#312e81" stroke-width="3" />
+
+    <g font-weight="700" text-anchor="middle">
+      <text x="340" y="296" font-size="34" fill="#1e1b4b">AI</text>
+      <text x="340" y="426" font-size="30" fill="#1e1b4b">머신러닝</text>
+      <text x="340" y="556" font-size="28" fill="#1e1b4b">딥러닝</text>
+      <text x="340" y="695" font-size="28" fill="#ffffff">LLM</text>
+    </g>
+
+    <!-- 원과 설명을 잇는 점선 -->
+    <g stroke="#64748b" stroke-width="2" stroke-dasharray="6 6" fill="none">
+      <path d="M392 286 H680" />
+      <path d="M420 416 H680" />
+      <path d="M404 546 H680" />
+      <path d="M392 685 H680" />
+    </g>
+    <g fill="#64748b">
+      <circle cx="680" cy="286" r="5" />
+      <circle cx="680" cy="416" r="5" />
+      <circle cx="680" cy="546" r="5" />
+      <circle cx="680" cy="685" r="5" />
+    </g>
+
+    <!-- 오른쪽 설명 -->
+    <g>
+      <text x="704" y="282" font-size="26" font-weight="700" fill="#1e293b">기계가 지능적인 일을 하게 만들기</text>
+      <text x="704" y="316" font-size="22" fill="#475569">학습 없는 규칙 기반 시스템도 포함</text>
+
+      <text x="704" y="412" font-size="26" font-weight="700" fill="#1e293b">데이터에서 규칙을 학습</text>
+      <text x="704" y="446" font-size="22" fill="#475569">예: 스팸 메일 필터</text>
+
+      <text x="704" y="542" font-size="26" font-weight="700" fill="#1e293b">여러 층의 신경망으로 학습</text>
+      <text x="704" y="576" font-size="22" fill="#475569">예: 사진 속 사물 인식</text>
+
+      <text x="704" y="681" font-size="26" font-weight="700" fill="#1e293b">언어를 다루는 큰 딥러닝 모델</text>
+      <text x="704" y="715" font-size="22" fill="#475569">예: ChatGPT, Claude, Gemini의 바탕 모델</text>
+    </g>
+  </g>
+</svg>
