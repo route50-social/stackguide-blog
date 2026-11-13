@@ -1,0 +1,68 @@
+<!-- 그림 2: 같은 선호 데이터(답변 비교)를 RLHF는 보상 모델과 강화학습(PPO)을 거쳐, DPO는 곧바로 모델 학습에 쓰는 차이 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="fig2-title fig2-desc">
+  <title id="fig2-title">선호 데이터를 모델에 반영하는 두 가지 길</title>
+  <desc id="fig2-desc">왼쪽의 선호 데이터는 같은 질문에 대한 답변 A가 답변 B보다 낫다는 비교입니다. 위쪽 RLHF 경로는 이 데이터로 먼저 답변에 점수를 매기는 보상 모델을 학습하고, 모델이 쓴 답을 보상 모델이 채점하면 PPO 강화학습으로 점수가 높아지는 쪽으로 모델을 고치며, 원래 모델에서 너무 멀어지지 않게 KL 벌점을 줍니다. 아래쪽 DPO 경로는 보상 모델과 강화학습 없이, 좋은 답의 확률은 높이고 나쁜 답의 확률은 낮추도록 모델을 바로 학습합니다.</desc>
+  <defs>
+    <marker id="f2-arrow" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M4 2 L12 7 L4 12" fill="none" stroke="#334155" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+    </marker>
+    <marker id="f2-arrow-loop" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M4 2 L12 7 L4 12" fill="none" stroke="#c2410c" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="640" rx="16" fill="#fffbf5" />
+  <rect x="1" y="1" width="1198" height="638" rx="16" fill="none" stroke="#e7d8c5" stroke-width="2" />
+
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+    <text x="64" y="88" font-size="36" font-weight="700" fill="#1c1917">선호 데이터를 모델에 반영하는 두 가지 길</text>
+    <text x="64" y="128" font-size="24" fill="#57534e">같은 비교 데이터를 RLHF는 보상 모델을 거쳐, DPO는 곧바로 씁니다</text>
+
+    <!-- 선호 데이터 -->
+    <rect x="64" y="232" width="232" height="232" rx="16" fill="#ffffff" stroke="#a8a29e" stroke-width="2" />
+    <text x="180" y="276" font-size="26" font-weight="700" fill="#1c1917" text-anchor="middle">선호 데이터</text>
+    <text x="180" y="308" font-size="22" fill="#57534e" text-anchor="middle">같은 질문, 두 답변</text>
+    <rect x="96" y="332" width="168" height="44" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2" />
+    <text x="180" y="362" font-size="22" font-weight="700" fill="#15803d" text-anchor="middle">답변 A ✓ 더 나음</text>
+    <rect x="96" y="392" width="168" height="44" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4" />
+    <text x="180" y="422" font-size="22" fill="#475569" text-anchor="middle">답변 B</text>
+
+    <!-- 갈림길 -->
+    <path d="M296 320 H336 V216 H368" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#f2-arrow)" />
+    <path d="M296 376 H336 V512 H368" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#f2-arrow)" />
+
+    <!-- RLHF 경로 라벨 -->
+    <text x="376" y="172" font-size="24" font-weight="700" fill="#9a3412">RLHF (PPO)</text>
+
+    <!-- RLHF: 보상 모델 -->
+    <rect x="376" y="184" width="240" height="96" rx="12" fill="#ffedd5" stroke="#fb923c" stroke-width="2" />
+    <text x="496" y="224" font-size="24" font-weight="700" fill="#1c1917" text-anchor="middle">① 보상 모델 학습</text>
+    <text x="496" y="258" font-size="22" fill="#57534e" text-anchor="middle">답변 → 점수 하나</text>
+    <line x1="616" y1="232" x2="664" y2="232" stroke="#334155" stroke-width="3" marker-end="url(#f2-arrow)" />
+
+    <!-- RLHF: 강화학습 -->
+    <rect x="672" y="184" width="240" height="96" rx="12" fill="#ffedd5" stroke="#fb923c" stroke-width="2" />
+    <text x="792" y="224" font-size="24" font-weight="700" fill="#1c1917" text-anchor="middle">② PPO 강화학습</text>
+    <text x="792" y="258" font-size="22" fill="#57534e" text-anchor="middle">점수가 오르게 수정</text>
+    <line x1="912" y1="232" x2="960" y2="232" stroke="#334155" stroke-width="3" marker-end="url(#f2-arrow)" />
+
+    <!-- 생성 → 채점 반복 -->
+    <path d="M792 280 V316 H496 V288" fill="none" stroke="#c2410c" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#f2-arrow-loop)" />
+    <text x="644" y="348" font-size="22" fill="#9a3412" text-anchor="middle">모델이 쓴 답을 보상 모델이 채점 (반복)</text>
+    <text x="644" y="378" font-size="22" fill="#9a3412" text-anchor="middle">원래 모델과 멀어지면 KL 벌점</text>
+
+    <!-- DPO 경로 라벨 -->
+    <text x="376" y="468" font-size="24" font-weight="700" fill="#1d4ed8">DPO</text>
+
+    <!-- DPO: 바로 학습 -->
+    <rect x="376" y="480" width="536" height="96" rx="12" fill="#dbeafe" stroke="#60a5fa" stroke-width="2" />
+    <text x="644" y="520" font-size="24" font-weight="700" fill="#1c1917" text-anchor="middle">모델을 바로 학습</text>
+    <text x="644" y="554" font-size="22" fill="#334155" text-anchor="middle">A의 확률은 높이고 B의 확률은 낮춤</text>
+    <line x1="912" y1="528" x2="960" y2="528" stroke="#334155" stroke-width="3" marker-end="url(#f2-arrow)" />
+
+    <!-- 결과 모델 -->
+    <rect x="968" y="184" width="168" height="392" rx="16" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" />
+    <text x="1052" y="362" font-size="26" font-weight="700" fill="#15803d" text-anchor="middle">선호에</text>
+    <text x="1052" y="396" font-size="26" font-weight="700" fill="#15803d" text-anchor="middle">맞춘 모델</text>
+  </g>
+</svg>
