@@ -1,0 +1,88 @@
+<!-- 그림 3: 토큰화 → 확률 계산 → 하나 고르기 → 끝에 붙이기를 반복하는 자기회귀 생성 흐름 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="fig3-title fig3-desc">
+  <title id="fig3-title">토큰을 하나씩 이어 쓰는 과정</title>
+  <desc id="fig3-desc">1 토큰화에서 입력 문장을 토큰 번호로 바꾸고, 2 확률 계산에서 모델이 다음 토큰 후보의 확률을 구하고, 3 고르기에서 그중 하나를 고르고, 4 붙이기에서 고른 토큰을 문장 끝에 붙입니다. 늘어난 문장은 다시 2단계로 들어가 반복되며, 3단계에서 끝 토큰을 고르거나 최대 길이에 이르면 멈춥니다.</desc>
+  <defs>
+    <marker id="f3-arrow" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M5 2 L12 7 L5 12" fill="none" stroke="#334155" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+    </marker>
+    <marker id="f3-arrow-loop" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M5 2 L12 7 L5 12" fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+    </marker>
+    <marker id="f3-arrow-stop" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M5 2 L12 7 L5 12" fill="none" stroke="#475569" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="640" rx="16" fill="#faf9fe" />
+  <rect x="1" y="1" width="1198" height="638" rx="16" fill="none" stroke="#d4d0e8" stroke-width="2" />
+
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+    <text x="64" y="88" font-size="36" font-weight="700" fill="#1e1b4b">토큰을 하나씩 이어 쓰는 과정</text>
+    <text x="64" y="128" font-size="24" fill="#4c4a63">2~4단계를 끝 토큰이 나올 때까지 반복합니다</text>
+
+    <!-- 반복: 4 → 2 (상자 위쪽으로 돌아감) -->
+    <path d="M1020 208 V160 H460 V202" fill="none" stroke="#6d28d9" stroke-width="3" marker-end="url(#f3-arrow-loop)" />
+    <rect x="608" y="136" width="296" height="48" rx="24" fill="#ffffff" stroke="#6d28d9" stroke-width="2" />
+    <text x="756" y="168" font-size="22" font-weight="600" fill="#5b21b6" text-anchor="middle">늘어난 글을 다시 입력</text>
+
+    <!-- 단계 상자: 232×208, 간격 48 -->
+    <g stroke="#a5a1c7" stroke-width="2">
+      <rect x="64" y="208" width="232" height="208" rx="16" fill="#e0f2fe" />
+      <rect x="344" y="208" width="232" height="208" rx="16" fill="#ede9fe" />
+      <rect x="624" y="208" width="232" height="208" rx="16" fill="#ede9fe" />
+      <rect x="904" y="208" width="232" height="208" rx="16" fill="#ede9fe" />
+    </g>
+    <g fill="#ffffff" stroke="#6b6890" stroke-width="2">
+      <circle cx="108" cy="252" r="24" />
+      <circle cx="388" cy="252" r="24" />
+      <circle cx="668" cy="252" r="24" />
+      <circle cx="948" cy="252" r="24" />
+    </g>
+    <g font-size="26" font-weight="700" fill="#312e5a" text-anchor="middle">
+      <text x="108" y="261">1</text>
+      <text x="388" y="261">2</text>
+      <text x="668" y="261">3</text>
+      <text x="948" y="261">4</text>
+    </g>
+    <g font-size="30" font-weight="700" fill="#1e1b4b">
+      <text x="88" y="328">토큰화</text>
+      <text x="368" y="328">확률 계산</text>
+      <text x="648" y="328">하나 고르기</text>
+      <text x="928" y="328">끝에 붙이기</text>
+    </g>
+    <g font-size="22" fill="#4c4a63">
+      <text x="88" y="364">글 → 토큰 번호</text>
+      <text x="88" y="394">(처음 한 번)</text>
+      <text x="368" y="364">모든 토큰에</text>
+      <text x="368" y="394">확률을 매김</text>
+      <text x="648" y="364">그리디 또는</text>
+      <text x="648" y="394">샘플링</text>
+      <text x="928" y="364">입력이 한 토큰</text>
+      <text x="928" y="394">길어짐</text>
+    </g>
+
+    <!-- 진행 화살표 -->
+    <g stroke="#334155" stroke-width="3" fill="none" marker-end="url(#f3-arrow)">
+      <path d="M296 312 H340" />
+      <path d="M576 312 H620" />
+      <path d="M856 312 H900" />
+    </g>
+
+    <!-- 멈춤: 3에서 끝 토큰을 고르거나 최대 길이에 이르면 -->
+    <path d="M740 416 V476" fill="none" stroke="#475569" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#f3-arrow-stop)" />
+    <rect x="564" y="480" width="352" height="48" rx="12" fill="#f1f5f9" stroke="#475569" stroke-width="2" />
+    <text x="740" y="512" font-size="22" font-weight="600" fill="#334155" text-anchor="middle">끝 토큰·최대 길이 → 멈춤</text>
+
+    <!-- 범례 -->
+    <g font-size="22" fill="#334155">
+      <path d="M64 504 H112" stroke="#6d28d9" stroke-width="3" />
+      <text x="124" y="512">반복</text>
+      <path d="M200 504 H248" stroke="#475569" stroke-width="3" stroke-dasharray="8 6" />
+      <text x="260" y="512">종료 조건</text>
+    </g>
+
+    <!-- 예시 줄 -->
+    <text x="64" y="592" font-size="22" fill="#4c4a63">예: "…한 잔" → '␣마' 92.6% 선택 → "…한 잔 마" → '셨' 40.7% 선택 → …</text>
+  </g>
+</svg>

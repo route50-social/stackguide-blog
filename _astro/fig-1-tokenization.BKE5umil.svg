@@ -1,0 +1,94 @@
+<!-- 그림 1: "나는 커피를 좋아한다."를 tiktoken의 o200k_base와 cl100k_base로 자른 실제 결과 비교 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="fig1-title fig1-desc">
+  <title id="fig1-title">같은 문장, 다른 토큰 수</title>
+  <desc id="fig1-desc">위쪽 o200k_base는 나는, 공백과 커, 피, 를, 공백과 좋아, 한다, 마침표의 일곱 토큰입니다. 아래쪽 cl100k_base는 나, 는, 공백과 EC BB, A4 ED, 94, BC, 를, 공백과 EC A2, 8B, 아, 한다, 마침표의 열두 토큰입니다. 16진수로 적은 여섯 토큰은 글자를 이루는 바이트 조각이며, A4 ED는 커의 마지막 바이트와 피의 첫 바이트를 함께 담고 있습니다.</desc>
+
+  <rect width="1200" height="640" rx="16" fill="#fbfaf7" />
+  <rect x="1" y="1" width="1198" height="638" rx="16" fill="none" stroke="#d6d3d1" stroke-width="2" />
+
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+    <text x="64" y="88" font-size="36" font-weight="700" fill="#1c1917">같은 문장, 다른 토큰 수</text>
+    <text x="64" y="128" font-size="24" fill="#57534e">"나는 커피를 좋아한다." (12글자)를 두 인코딩으로 자른 결과</text>
+
+    <!-- o200k_base: 7토큰 -->
+    <text x="64" y="192" font-size="24" font-weight="700" fill="#0f766e">o200k_base</text>
+    <text x="210" y="192" font-size="24" fill="#44403c">어휘 200,019개 · 7토큰</text>
+    <g stroke="#0f766e" stroke-width="2" fill="#ccfbf1">
+      <rect x="64" y="216" width="96" height="64" rx="10" />
+      <rect x="168" y="216" width="88" height="64" rx="10" />
+      <rect x="264" y="216" width="64" height="64" rx="10" />
+      <rect x="336" y="216" width="64" height="64" rx="10" />
+      <rect x="408" y="216" width="112" height="64" rx="10" />
+      <rect x="528" y="216" width="96" height="64" rx="10" />
+      <rect x="632" y="216" width="56" height="64" rx="10" />
+    </g>
+    <g font-size="30" font-weight="600" fill="#134e4a" text-anchor="middle">
+      <text x="112" y="259">나는</text>
+      <text x="212" y="259"><tspan fill="#94a3b8">␣</tspan>커</text>
+      <text x="296" y="259">피</text>
+      <text x="368" y="259">를</text>
+      <text x="464" y="259"><tspan fill="#94a3b8">␣</tspan>좋아</text>
+      <text x="576" y="259">한다</text>
+      <text x="660" y="259">.</text>
+    </g>
+
+    <!-- cl100k_base: 12토큰 -->
+    <text x="64" y="364" font-size="24" font-weight="700" fill="#9a3412">cl100k_base</text>
+    <text x="220" y="364" font-size="24" fill="#44403c">어휘 100,277개 · 12토큰</text>
+    <!-- 글자로 읽히는 토큰 -->
+    <g stroke="#9a3412" stroke-width="2" fill="#ffedd5">
+      <rect x="64" y="388" width="56" height="64" rx="10" />
+      <rect x="128" y="388" width="56" height="64" rx="10" />
+      <rect x="616" y="388" width="56" height="64" rx="10" />
+      <rect x="896" y="388" width="56" height="64" rx="10" />
+      <rect x="960" y="388" width="80" height="64" rx="10" />
+      <rect x="1048" y="388" width="48" height="64" rx="10" />
+    </g>
+    <g font-size="30" font-weight="600" fill="#7c2d12" text-anchor="middle">
+      <text x="92" y="431">나</text>
+      <text x="156" y="431">는</text>
+      <text x="644" y="431">를</text>
+      <text x="924" y="431">아</text>
+      <text x="1000" y="431">한다</text>
+      <text x="1072" y="431">.</text>
+    </g>
+    <!-- 바이트 조각 토큰 (16진수) -->
+    <g stroke="#78716c" stroke-width="2" stroke-dasharray="7 5" fill="#f5f5f4">
+      <rect x="192" y="388" width="120" height="64" rx="10" />
+      <rect x="320" y="388" width="104" height="64" rx="10" />
+      <rect x="432" y="388" width="80" height="64" rx="10" />
+      <rect x="520" y="388" width="88" height="64" rx="10" />
+      <rect x="680" y="388" width="120" height="64" rx="10" />
+      <rect x="808" y="388" width="80" height="64" rx="10" />
+    </g>
+    <g font-family="'JetBrains Mono', Menlo, Consolas, monospace" font-size="22" fill="#44403c" text-anchor="middle">
+      <text x="252" y="427"><tspan fill="#94a3b8">␣</tspan>EC BB</text>
+      <text x="372" y="427">A4 ED</text>
+      <text x="472" y="427">94</text>
+      <text x="564" y="427">BC</text>
+      <text x="740" y="427"><tspan fill="#94a3b8">␣</tspan>EC A2</text>
+      <text x="848" y="427">8B</text>
+    </g>
+
+    <!-- 바이트 조각이 이루는 글자 표시 -->
+    <g stroke="#57534e" stroke-width="2" fill="none">
+      <path d="M212 468 V480 H370 V468" />
+      <path d="M392 468 V480 H600 V468" />
+      <path d="M700 468 V480 H880 V468" />
+    </g>
+    <g font-size="22" fill="#44403c" text-anchor="middle">
+      <text x="291" y="512">'커' (EC BB A4)</text>
+      <text x="496" y="512">'피' (ED 94 BC)</text>
+      <text x="790" y="512">'좋' (EC A2 8B)</text>
+    </g>
+
+    <!-- 범례 -->
+    <g font-size="22" fill="#44403c">
+      <rect x="64" y="560" width="32" height="32" rx="6" fill="#ffedd5" stroke="#9a3412" stroke-width="2" />
+      <text x="108" y="584">글자로 읽히는 토큰</text>
+      <rect x="336" y="560" width="32" height="32" rx="6" fill="#f5f5f4" stroke="#78716c" stroke-width="2" stroke-dasharray="7 5" />
+      <text x="380" y="584">UTF-8 바이트 조각(16진수)</text>
+      <text x="708" y="584"><tspan fill="#64748b" font-weight="700">␣</tspan> 토큰 앞의 공백</text>
+    </g>
+  </g>
+</svg>

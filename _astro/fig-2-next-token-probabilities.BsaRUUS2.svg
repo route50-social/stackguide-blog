@@ -1,0 +1,66 @@
+<!-- 그림 2: gemma3:4b(Ollama)로 측정한 "오늘 아침에 커피를 한 잔 마" 다음 토큰 확률 상위 5개 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="fig2-title fig2-desc">
+  <title id="fig2-title">다음 토큰 후보의 확률</title>
+  <desc id="fig2-desc">오늘 아침에 커피를 한 잔 마, 까지 쓴 상태에서 다음 토큰 후보의 확률을 나타낸 가로 막대그래프입니다. 셨 40.7퍼센트, 신 27.4퍼센트, 시고 22.3퍼센트, 시 6.6퍼센트, 시는 2.1퍼센트이며, 온도 0에서는 1위인 셨이 선택됩니다.</desc>
+
+  <rect width="1200" height="600" rx="16" fill="#f8fafc" />
+  <rect x="1" y="1" width="1198" height="598" rx="16" fill="none" stroke="#cbd5e1" stroke-width="2" />
+
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+    <text x="64" y="88" font-size="36" font-weight="700" fill="#0f172a">다음 토큰 후보의 확률</text>
+    <text x="64" y="128" font-size="24" fill="#475569">입력: "오늘 아침에 커피를 한 잔 마" → 다음에 올 토큰은?</text>
+
+    <!-- 눈금: 0~50%, 1%당 14px, 막대 시작 x=224 -->
+    <g stroke="#e2e8f0" stroke-width="2">
+      <path d="M364 168 V472" />
+      <path d="M504 168 V472" />
+      <path d="M644 168 V472" />
+      <path d="M784 168 V472" />
+      <path d="M924 168 V472" />
+    </g>
+    <path d="M224 168 V472" stroke="#64748b" stroke-width="2" />
+    <g font-size="22" fill="#475569" text-anchor="middle">
+      <text x="224" y="504">0%</text>
+      <text x="364" y="504">10%</text>
+      <text x="504" y="504">20%</text>
+      <text x="644" y="504">30%</text>
+      <text x="784" y="504">40%</text>
+      <text x="924" y="504">50%</text>
+    </g>
+
+    <!-- 후보 토큰 이름 -->
+    <g font-size="28" font-weight="600" fill="#0f172a" text-anchor="end">
+      <text x="200" y="214">'셨'</text>
+      <text x="200" y="270">'신'</text>
+      <text x="200" y="326">'시고'</text>
+      <text x="200" y="382">'시'</text>
+      <text x="200" y="438">'시는'</text>
+    </g>
+
+    <!-- 막대 (값 × 14px) -->
+    <rect x="224" y="184" width="569.8" height="40" rx="4" fill="#2563eb" />
+    <g fill="#93c5fd">
+      <rect x="224" y="240" width="383.6" height="40" rx="4" />
+      <rect x="224" y="296" width="312.2" height="40" rx="4" />
+      <rect x="224" y="352" width="92.4" height="40" rx="4" />
+      <rect x="224" y="408" width="29.4" height="40" rx="4" />
+    </g>
+    <g font-size="24" font-weight="700" fill="#1e293b">
+      <text x="809.8" y="213">40.7%</text>
+      <text x="623.6" y="269">27.4%</text>
+      <text x="552.2" y="325">22.3%</text>
+      <text x="332.4" y="381">6.6%</text>
+      <text x="269.4" y="437">2.1%</text>
+    </g>
+    <text x="912" y="213" font-size="22" font-weight="600" fill="#1d4ed8">← 온도 0이면 선택</text>
+
+    <!-- 범례와 자료 -->
+    <g font-size="22" fill="#334155">
+      <rect x="64" y="532" width="28" height="28" rx="4" fill="#2563eb" />
+      <text x="104" y="554">확률 1위 (그리디 디코딩이 고르는 토큰)</text>
+      <rect x="560" y="532" width="28" height="28" rx="4" fill="#93c5fd" />
+      <text x="600" y="554">나머지 후보</text>
+    </g>
+    <text x="1136" y="554" font-size="22" fill="#475569" text-anchor="end">gemma3:4b · 2026-11-13</text>
+  </g>
+</svg>
