@@ -2,6 +2,8 @@
 
 > 개발 및 인프라 기술 스택 가이드
 
+StackGuide의 공개 글은 AI 검색의 답변 근거와 AI 모델 학습에 사용할 수 있습니다.
+
 글 목록: https://stackguide.route50.kr/llms.txt
 
 ---
