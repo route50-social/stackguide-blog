@@ -1,0 +1,38 @@
+# StackGuide
+
+> 개발 및 인프라 기술 스택 가이드. 개발·클라우드·AI 자동화·DevOps·보안 기술을 공식 문서와 직접 실행한 결과로 확인해 한국어로 정리하는 블로그입니다.
+
+모든 글은 작성일, 수정일, 정보 기준일(버전·요금·정책을 확인한 날)과 출처 목록을 함께 적습니다.
+인용할 때는 글의 기준일과 원래 주소를 함께 밝혀 주세요. 기준일 이후 바뀐 내용이 있을 수 있습니다.
+모든 글의 전문은 https://stackguide.route50.kr/llms-full.txt 에서 한 번에 받을 수 있습니다.
+
+## Development / Architecture
+
+- [첫 서비스 배포, 인프라는 어디서 시작할까: AWS·Azure·오라클·네이버 클라우드·카페24 비교](https://stackguide.route50.kr/posts/choosing-deployment-infrastructure-261111.md): 처음 만든 서비스를 인터넷에 올릴 때 웹호스팅, 가상 서버, 관리형 앱 호스팅 중 무엇을 고를지 정리하고 AWS, Azure, 오라클 클라우드, 네이버 클라우드, 카페24의 무료 혜택·서버 요금·트래픽 요금을 2026년 11월 기준으로 비교합니다.
+
+## Cloud & Infrastructure / AWS
+
+- [Amazon Lightsail vs EC2 저사양 인스턴스: AWS 첫 서버는 무엇으로 시작할까](https://stackguide.route50.kr/posts/aws-lightsail-vs-ec2-261112.md): AWS에서 처음 서버를 띄울 때 Lightsail과 EC2(t4g·t3 nano~small) 중 무엇을 고를지 서울 리전 요금, 사양과 CPU 성능 기준, 설정 난이도, 확장 방법을 2026년 11월 기준으로 비교합니다.
+
+## Cloud & Infrastructure / Network
+
+- [원격 데스크톱 도구 비교: Windows 원격 데스크톱, Chrome 원격 데스크톱, TeamViewer, AnyDesk, Splashtop, RustDesk](https://stackguide.route50.kr/posts/remote-desktop-tools-comparison-261111.md): 집 PC에 밖에서 접속하거나 다른 사람의 PC를 도와줄 때 쓰는 원격 데스크톱 도구 6가지를 연결 방식, 무료로 쓸 수 있는 조건, 유료 요금제, 설정 난이도로 비교합니다. 2026년 11월 11일 기준 공식 문서로 확인했습니다.
+
+## AI & Automation / Local LLM
+
+- [AI, 머신러닝, 딥러닝, LLM은 서로 어떻게 다를까?](https://stackguide.route50.kr/posts/ai-ml-dl-llm-difference-261113.md): AI, 머신러닝, 딥러닝, LLM은 큰 원 안에 작은 원이 들어가는 포함 관계입니다. 네 용어가 각각 무엇을 가리키는지, 생성형 AI는 어디쯤 놓이는지, ChatGPT 같은 서비스는 그중 무엇인지를 그림과 예시로 정리합니다.
+- [LLM은 어떻게 글을 쓸까: 토큰과 '다음 단어 예측'](https://stackguide.route50.kr/posts/how-llm-writes-tokens-261113.md): LLM은 문장을 토큰이라는 조각으로 나누고, 다음에 올 토큰의 확률을 계산해 하나를 골라 붙이는 일을 반복하며 글을 씁니다. 토크나이저와 로컬 모델로 직접 측정한 결과를 보며 이 원리를 비유와 함께 살펴봅니다.
+
+## Tech Blog / Thoughts
+
+- [AI는 개발자 평가를 어떻게 바꾸고 있나: 코딩 테스트, 기술 면접, 인사 평가의 변화](https://stackguide.route50.kr/posts/ai-developer-assessment-261111.md): 캔바·메타·구글·넥슨처럼 AI를 쓰게 하고 그 쓰는 방식을 보는 회사와, Anthropic처럼 AI 없이 보는 회사의 실제 사례를 2026년 11월 기준으로 정리하고, 채용 조사와 생산성 연구가 보여 주는 평가 기준의 변화와 앞으로의 방향(필자 의견)을 살펴봅니다.
+
+## IT Business / Side Project
+
+- [Next.js와 PostgreSQL로 만든 서비스, 무료로 배포하는 방법과 '진짜 무료'의 조건](https://stackguide.route50.kr/posts/nextjs-postgresql-free-deployment-261111.md): AI 도구로 만든 Next.js·PostgreSQL 서비스를 무료로 올릴 수 있는 Vercel, Netlify, Cloudflare Workers, Render와 Neon, Supabase, Prisma Postgres의 무료 등급을 2026년 11월 기준으로 비교하고, 한도를 넘거나 쉬면 무슨 일이 생기는지, 상업적 이용이 허용되는지까지 정리합니다.
+
+## Optional
+
+- [소개](https://stackguide.route50.kr/about/): StackGuide가 다루는 분야와 글 작성 원칙
+- [RSS](https://stackguide.route50.kr/rss.xml): 새 글 피드
+- [Sitemap](https://stackguide.route50.kr/sitemap-index.xml): 전체 페이지 목록

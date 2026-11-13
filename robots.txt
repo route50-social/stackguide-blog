@@ -1,8 +1,31 @@
-# 검색 엔진 수집 규칙
-# 모든 검색 엔진이 사이트 전체를 수집할 수 있도록 허용하고, sitemap 위치를 알려 줍니다.
-# 공개 주소를 바꾸면 아래 Sitemap 주소도 함께 수정합니다.
+# 검색 엔진·AI 수집 규칙
+# 모든 검색 엔진과 AI 검색·학습용 수집기가 사이트 전체를 수집할 수 있도록 허용하고, sitemap 위치를 알려 줍니다.
+# 공개 주소를 바꾸면 아래 Sitemap 주소와 llms.txt 안내도 함께 수정합니다.
 
+# 일반 검색 엔진 (Googlebot, Bingbot, Yeti(네이버), Daumoa(다음) 등)
 User-agent: *
 Allow: /
 
+# AI 검색·학습용 수집기. 위의 전체 허용과 같은 규칙이지만, 허용 의도를 분명히 하려고 따로 적습니다.
+# 특정 수집기를 막으려면 그 이름만 이 묶음에서 빼고 "Disallow: /" 묶음을 따로 만듭니다.
+# - OpenAI: GPTBot(학습), OAI-SearchBot(ChatGPT 검색), ChatGPT-User(사용자 요청)
+# - Anthropic: ClaudeBot(학습), Claude-SearchBot(검색), Claude-User(사용자 요청)
+# - Google-Extended: Gemini 학습·응답 근거 사용 허용 여부 (Google 검색 색인과는 별개)
+# - Applebot-Extended: Apple 생성형 AI 학습 사용 허용 여부
+# - PerplexityBot, Perplexity-User: Perplexity 검색
+# - CCBot: Common Crawl (여러 AI 학습 데이터의 공개 원천)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: CCBot
+Allow: /
+
+# AI 도구용 사이트 안내와 글 전문: https://stackguide.route50.kr/llms.txt, https://stackguide.route50.kr/llms-full.txt
 Sitemap: https://stackguide.route50.kr/sitemap-index.xml
