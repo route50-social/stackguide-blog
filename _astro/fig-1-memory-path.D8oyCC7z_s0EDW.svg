@@ -1,0 +1,75 @@
+<!-- 그림 1: 그래픽카드가 따로 있는 PC와 Apple Silicon Mac에서 모델 파일이 올라가는 메모리와 계산 장치의 차이 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="fig1-title fig1-desc">
+  <title id="fig1-title">모델이 올라가는 메모리: 그래픽카드가 있는 PC와 Apple Silicon Mac</title>
+  <desc id="fig1-desc">왼쪽 PC에서는 SSD의 모델 파일이 RAM을 거쳐 그래픽카드의 VRAM에 올라가고 GPU가 계산합니다. VRAM에 다 들어가지 않은 층은 RAM에 남아 CPU가 계산하며, 이때 RAM의 대역폭(예: DDR4-3200 2채널 약 51.2GB/s)이 VRAM(예: RTX 5060 448GB/s)보다 훨씬 낮아 느려집니다. 오른쪽 Mac에서는 SSD의 모델 파일이 CPU와 GPU가 함께 쓰는 통합 메모리 하나에 올라가며, GPU가 쓸 수 있는 양은 운영체제가 정한 권장 한도(recommendedMaxWorkingSetSize) 안입니다.</desc>
+  <defs>
+    <marker id="f1-arrow" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M5 2 L12 7 L5 12" fill="none" stroke="#334155" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+    </marker>
+    <marker id="f1-arrow-warn" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M5 2 L12 7 L5 12" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="800" rx="16" fill="#fbfaf7" />
+  <rect x="1" y="1" width="1198" height="798" rx="16" fill="none" stroke="#d6d3cb" stroke-width="2" />
+
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+    <text x="64" y="96" font-size="38" font-weight="700" fill="#1e293b">모델은 어느 메모리에 올라갈까</text>
+    <text x="64" y="140" font-size="24" fill="#475569">GPU가 쓸 수 있는 메모리 안에 모델이 다 들어가야 빠르게 돕니다</text>
+
+    <!-- 왼쪽 패널: 그래픽카드가 있는 PC -->
+    <rect x="64" y="176" width="512" height="560" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+    <text x="96" y="224" font-size="28" font-weight="700" fill="#1e293b">그래픽카드가 있는 PC</text>
+
+    <!-- SSD -->
+    <rect x="96" y="256" width="448" height="72" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="120" y="301" font-size="24" font-weight="700" fill="#334155">SSD</text>
+    <text x="200" y="301" font-size="22" fill="#475569">모델 파일 보관(.gguf)</text>
+
+    <!-- RAM + CPU -->
+    <rect x="96" y="384" width="448" height="112" rx="12" fill="#eef2ff" stroke="#818cf8" stroke-width="2" />
+    <text x="120" y="426" font-size="24" font-weight="700" fill="#3730a3">RAM (시스템 메모리)</text>
+    <text x="120" y="464" font-size="22" fill="#475569">예: DDR4-3200 2채널 ≈ 51.2GB/s</text>
+
+    <!-- VRAM + GPU -->
+    <rect x="96" y="552" width="448" height="112" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2" />
+    <text x="120" y="594" font-size="24" font-weight="700" fill="#15803d">VRAM (그래픽카드 메모리)</text>
+    <text x="120" y="632" font-size="22" fill="#475569">예: RTX 5060 8GB, 448GB/s</text>
+
+    <g stroke="#334155" stroke-width="3" fill="none" marker-end="url(#f1-arrow)">
+      <path d="M200 328 V380" />
+      <path d="M200 496 V548" />
+    </g>
+    <text x="216" y="362" font-size="22" fill="#475569">① 읽기</text>
+    <text x="216" y="530" font-size="22" fill="#475569">② 올리기 → GPU가 계산</text>
+
+    <!-- 넘친 부분 -->
+    <path d="M512 552 V500" stroke="#b45309" stroke-width="3" stroke-dasharray="10 8" fill="none" marker-end="url(#f1-arrow-warn)" />
+    <text x="96" y="704" font-size="22" font-weight="600" fill="#b45309">⚠ 넘친 층은 RAM에 남아 CPU가 계산(느림)</text>
+
+    <!-- 오른쪽 패널: Apple Silicon Mac -->
+    <rect x="624" y="176" width="512" height="560" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+    <text x="656" y="224" font-size="28" font-weight="700" fill="#1e293b">Apple Silicon Mac</text>
+
+    <rect x="656" y="256" width="448" height="72" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="680" y="301" font-size="24" font-weight="700" fill="#334155">SSD</text>
+    <text x="760" y="301" font-size="22" fill="#475569">모델 파일 보관(.gguf)</text>
+
+    <path d="M760 328 V380" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#f1-arrow)" />
+    <text x="776" y="362" font-size="22" fill="#475569">① 읽기</text>
+
+    <!-- 통합 메모리 -->
+    <rect x="656" y="384" width="448" height="280" rx="12" fill="#f0fdfa" stroke="#0d9488" stroke-width="2" />
+    <text x="680" y="426" font-size="24" font-weight="700" fill="#0f766e">통합 메모리 (CPU·GPU 공용)</text>
+    <text x="680" y="464" font-size="22" fill="#475569">예: M4 Max 40코어 GPU, 546GB/s</text>
+
+    <rect x="680" y="488" width="400" height="80" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" stroke-dasharray="8 6" />
+    <text x="700" y="522" font-size="22" font-weight="700" fill="#0f766e">GPU 권장 한도 안</text>
+    <text x="700" y="554" font-size="20" fill="#475569" font-family="'JetBrains Mono', Menlo, Consolas, monospace">recommendedMaxWorkingSetSize</text>
+    <rect x="680" y="584" width="400" height="56" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="2" />
+    <text x="700" y="620" font-size="22" fill="#475569">macOS와 다른 앱이 쓰는 몫</text>
+
+    <text x="656" y="704" font-size="22" font-weight="600" fill="#15803d">✓ 옮겨 담지 않고 같은 메모리를 GPU가 읽음</text>
+  </g>
+</svg>
