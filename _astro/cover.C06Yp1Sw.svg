@@ -1,0 +1,200 @@
+<!-- 표지: 밝은 부엌 조리대 위의 구슬 유리병, 풀린 줄자, 크기가 줄어드는 계량컵. 모델 이름의 파라미터·컨텍스트·양자화를 상징합니다. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="cover-title cover-desc">
+  <title id="cover-title">구슬 유리병과 줄자, 계량컵이 놓인 부엌 조리대</title>
+  <desc id="cover-desc">아침 햇살이 드는 밝은 부엌 조리대 위에 작은 구슬이 가득 담긴 유리병, 길게 풀려 나온 줄자, 크기가 점점 작아지는 계량컵 네 개가 나란히 놓여 있습니다.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e6f4f1" />
+      <stop offset="0.6" stop-color="#d3ebe6" />
+      <stop offset="1" stop-color="#bfe0da" />
+    </linearGradient>
+    <linearGradient id="counter" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6efe4" />
+      <stop offset="1" stop-color="#e4d6c2" />
+    </linearGradient>
+    <linearGradient id="counterEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d6c4aa" />
+      <stop offset="1" stop-color="#b9a385" />
+    </linearGradient>
+    <radialGradient id="sun" cx="0.82" cy="0.12" r="0.7">
+      <stop offset="0" stop-color="#fff8e6" stop-opacity="0.95" />
+      <stop offset="0.5" stop-color="#fff3d6" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#fff3d6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55" />
+      <stop offset="0.25" stop-color="#e8f6f4" stop-opacity="0.2" />
+      <stop offset="0.8" stop-color="#d9efec" stop-opacity="0.15" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.5" />
+    </linearGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f9e8f" />
+      <stop offset="1" stop-color="#1d6f65" />
+    </linearGradient>
+    <linearGradient id="tapeCase" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff8a6b" />
+      <stop offset="1" stop-color="#d9583c" />
+    </linearGradient>
+    <linearGradient id="tape" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe9a8" />
+      <stop offset="1" stop-color="#f2cf6a" />
+    </linearGradient>
+    <linearGradient id="cup" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9aa7b4" />
+      <stop offset="0.35" stop-color="#eef2f6" />
+      <stop offset="0.6" stop-color="#c9d2dc" />
+      <stop offset="1" stop-color="#7f8c99" />
+    </linearGradient>
+    <linearGradient id="cupInner" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6b7785" />
+      <stop offset="1" stop-color="#b8c2cc" />
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feGaussianBlur stdDeviation="14" />
+    </filter>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+
+  <!-- 벽과 햇살 -->
+  <rect width="1600" height="900" fill="url(#wall)" />
+  <g opacity="0.35" fill="#ffffff">
+    <rect x="0" y="0" width="1600" height="2" />
+    <rect x="0" y="120" width="1600" height="2" />
+    <rect x="0" y="240" width="1600" height="2" />
+    <rect x="0" y="360" width="1600" height="2" />
+    <rect x="0" y="480" width="1600" height="2" />
+    <rect x="200" y="0" width="2" height="560" />
+    <rect x="520" y="0" width="2" height="560" />
+    <rect x="840" y="0" width="2" height="560" />
+    <rect x="1160" y="0" width="2" height="560" />
+    <rect x="1480" y="0" width="2" height="560" />
+  </g>
+  <rect width="1600" height="900" fill="url(#sun)" />
+  <!-- 창살 그림자 -->
+  <g fill="#9cc9c1" opacity="0.25">
+    <polygon points="1040,0 1110,0 860,560 790,560" />
+    <polygon points="1240,0 1310,0 1060,560 990,560" />
+  </g>
+
+  <!-- 조리대 -->
+  <rect x="0" y="560" width="1600" height="300" fill="url(#counter)" />
+  <rect x="0" y="830" width="1600" height="70" fill="url(#counterEdge)" />
+  <rect x="0" y="560" width="1600" height="4" fill="#ffffff" opacity="0.7" />
+  <g fill="#fff8ec" opacity="0.5">
+    <polygon points="860,560 790,560 640,830 720,830" />
+    <polygon points="1060,560 990,560 840,830 920,830" />
+  </g>
+
+  <!-- 그림자 -->
+  <g fill="#6b5a44" opacity="0.28" filter="url(#shadow)">
+    <ellipse cx="470" cy="742" rx="170" ry="30" />
+    <ellipse cx="770" cy="760" rx="150" ry="22" />
+    <ellipse cx="1150" cy="742" rx="290" ry="28" />
+  </g>
+
+  <!-- 구슬 유리병 (파라미터) -->
+  <g>
+    <rect x="335" y="340" width="270" height="400" rx="44" fill="#d7eeea" opacity="0.45" />
+    <g>
+      <g fill="#2f9e8f">
+        <circle cx="372" cy="712" r="13" /><circle cx="404" cy="716" r="13" /><circle cx="436" cy="712" r="13" /><circle cx="468" cy="716" r="13" /><circle cx="500" cy="712" r="13" /><circle cx="532" cy="716" r="13" /><circle cx="564" cy="712" r="13" />
+        <circle cx="388" cy="660" r="13" /><circle cx="484" cy="660" r="13" /><circle cx="548" cy="660" r="13" />
+        <circle cx="404" cy="608" r="13" /><circle cx="500" cy="608" r="13" />
+        <circle cx="372" cy="556" r="13" /><circle cx="468" cy="556" r="13" /><circle cx="564" cy="556" r="13" />
+        <circle cx="436" cy="504" r="13" /><circle cx="532" cy="504" r="13" />
+      </g>
+      <g fill="#ff8a6b">
+        <circle cx="388" cy="686" r="13" /><circle cx="452" cy="686" r="13" /><circle cx="548" cy="686" r="13" />
+        <circle cx="420" cy="634" r="13" /><circle cx="516" cy="634" r="13" />
+        <circle cx="372" cy="582" r="13" /><circle cx="532" cy="582" r="13" />
+        <circle cx="452" cy="530" r="13" /><circle cx="388" cy="504" r="13" />
+      </g>
+      <g fill="#f2cf6a">
+        <circle cx="420" cy="686" r="13" /><circle cx="516" cy="686" r="13" />
+        <circle cx="452" cy="634" r="13" /><circle cx="564" cy="634" r="13" />
+        <circle cx="436" cy="582" r="13" /><circle cx="500" cy="556" r="13" />
+        <circle cx="404" cy="530" r="13" /><circle cx="564" cy="530" r="13" /><circle cx="484" cy="478" r="13" />
+      </g>
+      <g fill="#5b8fd6">
+        <circle cx="484" cy="686" r="13" /><circle cx="372" cy="634" r="13" />
+        <circle cx="436" cy="660" r="13" /><circle cx="532" cy="608" r="13" /><circle cx="452" cy="608" r="13" />
+        <circle cx="404" cy="556" r="13" /><circle cx="516" cy="530" r="13" />
+        <circle cx="420" cy="478" r="13" /><circle cx="548" cy="478" r="13" />
+      </g>
+      <g fill="#e9f1ef">
+        <circle cx="356" cy="660" r="13" /><circle cx="516" cy="660" r="13" /><circle cx="580" cy="686" r="12" />
+        <circle cx="356" cy="608" r="13" /><circle cx="580" cy="608" r="12" />
+        <circle cx="484" cy="582" r="13" />
+        <circle cx="356" cy="530" r="12" /><circle cx="468" cy="504" r="13" /><circle cx="500" cy="504" r="13" />
+        <circle cx="452" cy="478" r="13" /><circle cx="516" cy="478" r="13" />
+      </g>
+      <!-- 구슬 반짝임 -->
+      <g fill="#ffffff" opacity="0.55">
+        <circle cx="400" cy="711" r="4" /><circle cx="464" cy="711" r="4" /><circle cx="528" cy="711" r="4" />
+        <circle cx="448" cy="629" r="4" /><circle cx="512" cy="629" r="4" /><circle cx="432" cy="577" r="4" />
+        <circle cx="496" cy="551" r="4" /><circle cx="480" cy="473" r="4" />
+      </g>
+    </g>
+    <rect x="335" y="340" width="270" height="400" rx="44" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.8" stroke-width="4" />
+    <rect x="356" y="380" width="18" height="320" rx="9" fill="#ffffff" opacity="0.6" />
+    <!-- 뚜껑 -->
+    <rect x="355" y="300" width="230" height="56" rx="14" fill="url(#lid)" />
+    <rect x="355" y="300" width="230" height="12" rx="6" fill="#4fc0b0" opacity="0.7" />
+    <rect x="365" y="344" width="210" height="8" rx="4" fill="#165a52" opacity="0.6" />
+  </g>
+
+  <!-- 계량컵 네 개 (양자화) -->
+  <g>
+    <!-- 큰 컵 -->
+    <path d="M660 610 L880 610 L860 748 Q858 760 846 760 L694 760 Q682 760 680 748 Z" fill="url(#cup)" />
+    <ellipse cx="770" cy="610" rx="110" ry="22" fill="url(#cupInner)" />
+    <ellipse cx="770" cy="610" rx="110" ry="22" fill="none" stroke="#eef2f6" stroke-width="4" />
+    <rect x="874" y="618" width="120" height="22" rx="11" fill="#94a3b8" transform="rotate(-6 874 618)" />
+  </g>
+  <g>
+    <path d="M920 650 L1080 650 L1066 750 Q1064 760 1054 760 L946 760 Q936 760 934 750 Z" fill="url(#cup)" />
+    <ellipse cx="1000" cy="650" rx="80" ry="16" fill="url(#cupInner)" />
+    <ellipse cx="1000" cy="650" rx="80" ry="16" fill="none" stroke="#eef2f6" stroke-width="4" />
+  </g>
+  <g>
+    <path d="M1110 682 L1230 682 L1220 752 Q1218 760 1210 760 L1130 760 Q1122 760 1120 752 Z" fill="url(#cup)" />
+    <ellipse cx="1170" cy="682" rx="60" ry="12" fill="url(#cupInner)" />
+    <ellipse cx="1170" cy="682" rx="60" ry="12" fill="none" stroke="#eef2f6" stroke-width="3" />
+  </g>
+  <g>
+    <path d="M1262 706 L1342 706 L1336 754 Q1334 760 1328 760 L1276 760 Q1270 760 1268 754 Z" fill="url(#cup)" />
+    <ellipse cx="1302" cy="706" rx="40" ry="8" fill="url(#cupInner)" />
+    <ellipse cx="1302" cy="706" rx="40" ry="8" fill="none" stroke="#eef2f6" stroke-width="3" />
+  </g>
+
+  <!-- 줄자 (컨텍스트) -->
+  <g>
+    <!-- 풀려 나온 테이프 -->
+    <polygon points="1370,796 760,812 760,844 1370,830" fill="#b8962f" opacity="0.35" filter="url(#soft)" />
+    <polygon points="1380,780 300,808 300,836 1380,812" fill="url(#tape)" />
+    <g stroke="#8a6d1a" stroke-width="3">
+      <line x1="340" y1="807" x2="340" y2="822" />
+      <line x1="420" y1="805" x2="420" y2="818" />
+      <line x1="500" y1="803" x2="500" y2="822" />
+      <line x1="580" y1="801" x2="580" y2="814" />
+      <line x1="660" y1="799" x2="660" y2="818" />
+      <line x1="740" y1="797" x2="740" y2="810" />
+      <line x1="820" y1="795" x2="820" y2="814" />
+      <line x1="900" y1="793" x2="900" y2="806" />
+      <line x1="980" y1="791" x2="980" y2="810" />
+      <line x1="1060" y1="789" x2="1060" y2="802" />
+      <line x1="1140" y1="787" x2="1140" y2="806" />
+      <line x1="1220" y1="785" x2="1220" y2="798" />
+      <line x1="1300" y1="783" x2="1300" y2="802" />
+    </g>
+    <rect x="292" y="802" width="14" height="40" rx="3" fill="#7a8794" />
+    <!-- 줄자 본체 -->
+    <rect x="1360" y="690" width="170" height="150" rx="40" fill="url(#tapeCase)" />
+    <circle cx="1445" cy="765" r="44" fill="#b6452c" />
+    <circle cx="1445" cy="765" r="30" fill="#ff9e85" />
+    <circle cx="1445" cy="765" r="10" fill="#8a3220" />
+    <rect x="1372" y="700" width="146" height="14" rx="7" fill="#ffffff" opacity="0.3" />
+  </g>
+</svg>

@@ -21,6 +21,7 @@ StackGuide의 공개 글은 AI 검색의 답변 근거와 AI 모델 학습에 �
 
 ## AI & Automation / Local LLM
 
+- [모델 이름 읽는 법: 파라미터(7B), 컨텍스트, 양자화(Q4)](https://stackguide.route50.kr/posts/read-llm-model-names-261114.md): 'Meta-Llama-3.1-8B-Instruct-Q4_K_M' 같은 모델 이름을 조각내어 파라미터 수, 미세 조정 목적, 컨텍스트 길이, 양자화 방식을 읽는 법을 정리하고, 이름만 보고 필요한 메모리를 어림하는 계산까지 실제 파일 값으로 확인합니다.
 - [LLM은 어떻게 만들어질까: 사전학습, 파인튜닝, RLHF](https://stackguide.route50.kr/posts/how-llm-is-trained-261113.md): LLM은 수조 개의 토큰으로 다음 토큰을 맞히는 사전학습, 질문과 모범 답안으로 답하는 법을 익히는 지도 파인튜닝, 사람이 더 좋아하는 답 쪽으로 다듬는 RLHF·DPO를 거쳐 만들어집니다. 같은 모델의 베이스판과 대화판을 직접 비교하며 단계마다 무엇이 달라지는지 살펴봅니다.
 - [LLM은 어떻게 글을 쓸까: 토큰과 '다음 단어 예측'](https://stackguide.route50.kr/posts/how-llm-writes-tokens-261113.md): LLM은 문장을 토큰이라는 조각으로 나누고, 다음에 올 토큰의 확률을 계산해 하나를 골라 붙이는 일을 반복하며 글을 씁니다. 토크나이저와 로컬 모델로 직접 측정한 결과를 보며 이 원리를 비유와 함께 살펴봅니다.
 - [AI, 머신러닝, 딥러닝, LLM은 서로 어떻게 다를까?](https://stackguide.route50.kr/posts/ai-ml-dl-llm-difference-261113.md): AI, 머신러닝, 딥러닝, LLM은 큰 원 안에 작은 원이 들어가는 포함 관계입니다. 네 용어가 각각 무엇을 가리키는지, 생성형 AI는 어디쯤 놓이는지, ChatGPT 같은 서비스는 그중 무엇인지를 그림과 예시로 정리합니다.
